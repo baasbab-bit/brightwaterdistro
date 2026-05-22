@@ -583,6 +583,170 @@
       .app{box-shadow:0 0 0 1px var(--line)}
     }
   
+
+    /* ==========================================================
+       MOBILE CATALOG POLISH
+       Compact 2-column commerce tiles for phones.
+    ========================================================== */
+    @media (max-width: 899px){
+      main{
+        padding:10px;
+      }
+
+      .top{
+        padding:11px 10px 9px;
+      }
+
+      .top-title{
+        font-size:18px;
+      }
+
+      .customer{
+        max-width:210px;
+      }
+
+      .search{
+        min-height:45px;
+        border-radius:14px;
+        font-size:15px;
+      }
+
+      .chips{
+        gap:7px;
+        padding-top:9px;
+      }
+
+      .chip{
+        padding:8px 11px;
+        font-size:12px;
+      }
+
+      .stats{
+        font-size:12px;
+        margin-bottom:8px;
+        padding-left:2px;
+      }
+
+      .product-list{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:9px;
+      }
+
+      .product-row{
+        display:flex;
+        flex-direction:column;
+        gap:0;
+        padding:0;
+        border-radius:16px;
+        overflow:hidden;
+        min-width:0;
+        box-shadow:0 4px 12px rgba(15,23,42,.06);
+      }
+
+      .p-img{
+        width:100%;
+        height:auto;
+        aspect-ratio:1 / 1;
+        border-radius:0;
+        border:0;
+        border-bottom:1px solid var(--line);
+        object-fit:contain;
+        background:#fff;
+      }
+
+      .p-info{
+        padding:9px;
+        gap:5px;
+        min-height:138px;
+      }
+
+      .p-title{
+        font-size:12.5px;
+        line-height:1.2;
+        min-height:30px;
+        -webkit-line-clamp:2;
+      }
+
+      .p-meta{
+        font-size:10.5px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+
+      .p-bottom{
+        display:block;
+        margin-top:auto;
+      }
+
+      .price{
+        font-size:13.5px;
+        line-height:1.15;
+      }
+
+      .small-note{
+        font-size:10.5px;
+        line-height:1.2;
+        margin:3px 0 7px;
+      }
+
+      .select-btn{
+        width:100%;
+        min-width:0;
+        min-height:36px;
+        border-radius:12px;
+        font-size:12px;
+        padding:0 8px;
+      }
+
+      .bottom-cart{
+        padding:9px 10px calc(9px + var(--safe-bottom));
+      }
+
+      .bottom-inner{
+        grid-template-columns:1fr 116px;
+        gap:8px;
+      }
+
+      .cart-summary strong{
+        font-size:14px;
+      }
+
+      .cart-summary{
+        font-size:12px;
+      }
+
+      .gold-btn{
+        min-height:43px;
+        border-radius:13px;
+        font-size:13px;
+      }
+    }
+
+    @media (max-width: 360px){
+      .product-list{
+        gap:7px;
+      }
+
+      .p-info{
+        padding:8px;
+        min-height:132px;
+      }
+
+      .p-title{
+        font-size:11.5px;
+      }
+
+      .price{
+        font-size:12.5px;
+      }
+
+      .select-btn{
+        min-height:34px;
+        font-size:11.5px;
+      }
+    }
+
     /* ==========================================================
        RESPONSIVE DESKTOP MODE
        Same HTML + JS, but desktop users get a catalog/dashboard feel.
@@ -1179,7 +1343,7 @@
                   <div class="price">From ${money(from)}</div>
                   <div class="small-note">${g.variants.length} variant(s) • ${stockCount} in stock</div>
                 </div>
-                <button class="select-btn" onclick="event.stopPropagation();openProduct('${escAttr(g.key)}')">Select</button>
+                <button class="select-btn" onclick="event.stopPropagation();openProduct('${escAttr(g.key)}')">View</button>
               </div>
             </div>
           </article>
