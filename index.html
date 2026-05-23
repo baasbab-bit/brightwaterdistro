@@ -3454,6 +3454,739 @@
       }
     }
 
+  
+    /* ==========================================================
+       UX PACKAGE 1 — PERCEIVED SPEED + ACTION FEEDBACK
+    ========================================================== */
+    .skeleton-grid{display:grid;gap:18px}
+    .skeleton-card{
+      background:#ffffff;border-radius:20px;overflow:hidden;
+      box-shadow:0 8px 22px rgba(11,15,22,.055);
+      border:1px solid rgba(215,221,229,.62)
+    }
+    .skeleton-img{
+      height:205px;
+      background:linear-gradient(90deg,#eef2f7 0%,#f8fafc 45%,#eef2f7 100%);
+      background-size:220% 100%;
+      animation:skeletonShimmer 1.15s ease-in-out infinite
+    }
+    .skeleton-body{padding:14px;display:grid;gap:10px}
+    .skeleton-line,.skeleton-button{
+      border-radius:999px;
+      background:linear-gradient(90deg,#eef2f7 0%,#f8fafc 45%,#eef2f7 100%);
+      background-size:220% 100%;
+      animation:skeletonShimmer 1.15s ease-in-out infinite
+    }
+    .skeleton-line{height:12px}
+    .skeleton-line.short{width:52%}
+    .skeleton-line.medium{width:72%}
+    .skeleton-line.long{width:92%}
+    .skeleton-button{height:42px;border-radius:14px;margin-top:8px}
+    @keyframes skeletonShimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
+
+    .cart-feedback-bump{animation:cartBump .35s ease-out}
+    @keyframes cartBump{0%{transform:translateY(0) scale(1)}45%{transform:translateY(-3px) scale(1.025)}100%{transform:translateY(0) scale(1)}}
+
+    .added-check{
+      position:absolute;right:10px;top:10px;width:28px;height:28px;border-radius:999px;
+      background:#027A48;color:#fff;display:grid;place-items:center;font-size:15px;font-weight:900;
+      box-shadow:0 8px 20px rgba(2,122,72,.22);
+      animation:addedCheck .8s ease-out forwards;pointer-events:none;z-index:2
+    }
+    @keyframes addedCheck{0%{opacity:0;transform:scale(.7)}18%{opacity:1;transform:scale(1.08)}70%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.92)}}
+    .product-row,.variant-row{position:relative}
+    .add-success-ring{animation:addSuccessRing .65s ease-out}
+    @keyframes addSuccessRing{
+      0%{box-shadow:0 0 0 0 rgba(2,122,72,.28),0 8px 22px rgba(11,15,22,.055)}
+      45%{box-shadow:0 0 0 5px rgba(2,122,72,.12),0 8px 22px rgba(11,15,22,.055)}
+      100%{box-shadow:0 0 0 0 rgba(2,122,72,0),0 8px 22px rgba(11,15,22,.055)}
+    }
+
+    .bottom-cart{transition:transform .18s ease,opacity .18s ease,box-shadow .18s ease!important}
+    .bottom-cart.cart-visible{box-shadow:0 -10px 28px rgba(11,15,22,.13)!important}
+    .cart-summary small{display:block;margin-top:2px;color:#667085;font-size:11px;font-weight:700}
+    .qty-step-feedback{animation:qtyStep .22s ease-out}
+    @keyframes qtyStep{0%{transform:scale(1)}45%{transform:scale(1.12)}100%{transform:scale(1)}}
+
+    @media (max-width:899px){
+      .skeleton-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+      .skeleton-img{height:auto;aspect-ratio:1/1}
+      .skeleton-body{padding:9px}
+      .bottom-cart{border-radius:18px 18px 0 0!important}
+    }
+    @media (min-width:900px){.skeleton-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}}
+    @media (min-width:1200px){.skeleton-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    @media (min-width:1500px){.skeleton-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+  
+    /* ==========================================================
+       UX PACKAGE 2 — PRODUCT DETAIL + VARIANT ROW POLISH
+    ========================================================== */
+    .detail-hero-card{
+      background:#fff;
+      border:1px solid rgba(215,221,229,.72);
+      border-radius:22px;
+      padding:14px;
+      box-shadow:0 8px 22px rgba(11,15,22,.055);
+    }
+
+    .detail-hero-img{
+      width:100%;
+      aspect-ratio:1 / 1;
+      object-fit:contain;
+      background:#fff;
+      border:1px solid rgba(215,221,229,.72);
+      border-radius:18px;
+      margin-bottom:12px;
+    }
+
+    .detail-brand{
+      color:#667085;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      margin-bottom:6px;
+    }
+
+    .detail-title{
+      color:#0B0F16;
+      font-size:18px;
+      line-height:1.18;
+      font-weight:950;
+      letter-spacing:-.04em;
+      margin-bottom:10px;
+    }
+
+    .detail-summary-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:7px;
+      margin-top:10px;
+    }
+
+    .detail-summary-box{
+      background:#F4F7FA;
+      border:1px solid rgba(215,221,229,.55);
+      border-radius:14px;
+      padding:9px;
+    }
+
+    .detail-summary-label{
+      color:#667085;
+      font-size:10px;
+      font-weight:850;
+      text-transform:uppercase;
+      letter-spacing:.035em;
+      line-height:1.1;
+    }
+
+    .detail-summary-value{
+      margin-top:4px;
+      color:#0B0F16;
+      font-size:13px;
+      font-weight:900;
+      line-height:1.15;
+    }
+
+    .variant-section-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin:0 0 10px;
+    }
+
+    .variant-section-title{
+      color:#0B0F16;
+      font-size:15px;
+      font-weight:950;
+      letter-spacing:-.035em;
+    }
+
+    .variant-section-count{
+      color:#667085;
+      font-size:12px;
+      font-weight:750;
+    }
+
+    .variant-row{
+      grid-template-columns:78px 1fr!important;
+      gap:12px!important;
+      padding:12px!important;
+      border-radius:20px!important;
+    }
+
+    .variant-main-line{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .variant-profit-chip{
+      flex:0 0 auto;
+      border-radius:999px;
+      background:#ECFDF3;
+      color:#027A48;
+      padding:5px 8px;
+      font-size:10.5px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .variant-commerce-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:7px;
+      margin-top:9px;
+    }
+
+    .variant-commerce-box{
+      background:#F8FAFC;
+      border:1px solid rgba(215,221,229,.55);
+      border-radius:13px;
+      padding:8px;
+      min-width:0;
+    }
+
+    .variant-commerce-label{
+      color:#667085;
+      font-size:9.5px;
+      font-weight:850;
+      text-transform:uppercase;
+      letter-spacing:.03em;
+      line-height:1.1;
+    }
+
+    .variant-commerce-value{
+      margin-top:4px;
+      color:#0B0F16;
+      font-size:12px;
+      font-weight:900;
+      line-height:1.12;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .variant-actions-polished{
+      display:grid;
+      grid-template-columns:86px 1fr;
+      gap:8px;
+      margin-top:10px;
+    }
+
+    .variant-actions-polished .qty{
+      min-height:42px!important;
+      border-radius:13px!important;
+    }
+
+    .variant-actions-polished .gold-btn{
+      min-height:42px!important;
+      border-radius:13px!important;
+    }
+
+    .stock-badge{
+      margin-top:6px!important;
+    }
+
+    @media (max-width:899px){
+      .hero-product{
+        display:none!important;
+      }
+
+      #productBody{
+        display:block!important;
+      }
+
+      .detail-hero-card{
+        margin-bottom:12px;
+      }
+
+      .detail-summary-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+      }
+
+      .variant-row{
+        grid-template-columns:64px 1fr!important;
+      }
+
+      .v-img{
+        width:64px!important;
+        height:64px!important;
+      }
+
+      .variant-commerce-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .variant-commerce-box.earn-box{
+        grid-column:1 / -1;
+      }
+    }
+
+    @media (min-width:900px){
+      .hero-product{
+        display:none!important;
+      }
+
+      #productBody{
+        grid-template-columns:300px 1fr!important;
+      }
+
+      .detail-hero-card{
+        position:sticky;
+        top:18px;
+        height:fit-content;
+      }
+
+      .variant-list{
+        gap:12px!important;
+      }
+    }
+
+  
+    /* ==========================================================
+       UX PACKAGE 3 — SEARCH + FILTERING POLISH
+    ========================================================== */
+    .search-wrap{
+      position:relative;
+      width:100%;
+    }
+
+    .search-wrap .search{
+      padding-right:44px!important;
+    }
+
+    .search-clear{
+      position:absolute;
+      right:8px;
+      top:50%;
+      transform:translateY(-50%);
+      width:32px;
+      height:32px;
+      border-radius:999px;
+      background:#EEF2F7;
+      color:#667085;
+      display:none;
+      place-items:center;
+      font-size:18px;
+      line-height:1;
+      font-weight:800;
+    }
+
+    .search-clear.show{
+      display:grid;
+    }
+
+    .filter-summary{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin:9px 0 0;
+    }
+
+    .filter-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      border-radius:999px;
+      padding:6px 9px;
+      background:#F4F7FA;
+      color:#344054;
+      border:1px solid rgba(215,221,229,.72);
+      font-size:11px;
+      font-weight:800;
+      line-height:1;
+    }
+
+    .filter-pill button{
+      width:16px;
+      height:16px;
+      border-radius:999px;
+      background:#E2E8F0;
+      color:#475467;
+      display:grid;
+      place-items:center;
+      font-size:11px;
+      font-weight:900;
+      line-height:1;
+      padding:0;
+    }
+
+    .result-breakdown{
+      color:#667085;
+      font-size:12.5px;
+      font-weight:650;
+      margin-top:3px;
+    }
+
+    .catalog-status-strong{
+      color:#0B0F16;
+      font-weight:850;
+    }
+
+    @media (max-width:899px){
+      .filter-summary{
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        scrollbar-width:none;
+        -webkit-overflow-scrolling:touch;
+      }
+      .filter-summary::-webkit-scrollbar{display:none}
+      .filter-pill{
+        flex:0 0 auto;
+      }
+    }
+
+  
+    /* ==========================================================
+       UX PACKAGE 4 — CART + CHECKOUT CONFIDENCE
+    ========================================================== */
+    .checkout-confidence{
+      background:#F8FAFC;
+      border:1px solid rgba(215,221,229,.72);
+      border-radius:18px;
+      padding:12px;
+      margin:0 0 10px;
+      display:grid;
+      gap:8px;
+    }
+
+    .checkout-confidence-title{
+      color:#0B0F16;
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:-.02em;
+    }
+
+    .checkout-confidence-item{
+      display:grid;
+      grid-template-columns:18px 1fr;
+      gap:8px;
+      align-items:start;
+      color:#667085;
+      font-size:12px;
+      line-height:1.35;
+      font-weight:650;
+    }
+
+    .checkout-confidence-check{
+      width:18px;
+      height:18px;
+      border-radius:999px;
+      background:rgba(0,163,224,.10);
+      color:#0078A8;
+      display:grid;
+      place-items:center;
+      font-size:11px;
+      font-weight:950;
+      line-height:1;
+    }
+
+    .cart-item{
+      grid-template-columns:64px 1fr!important;
+      gap:12px!important;
+      padding:12px!important;
+      border-radius:20px!important;
+    }
+
+    .cart-title{
+      font-size:14px!important;
+      line-height:1.22!important;
+    }
+
+    .cart-meta{
+      margin-top:5px!important;
+      line-height:1.45!important;
+    }
+
+    .cart-line-values{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:7px;
+      margin-top:8px;
+    }
+
+    .cart-line-box{
+      background:#F8FAFC;
+      border:1px solid rgba(215,221,229,.55);
+      border-radius:13px;
+      padding:8px;
+    }
+
+    .cart-line-label{
+      color:#667085;
+      font-size:9.5px;
+      font-weight:850;
+      text-transform:uppercase;
+      letter-spacing:.03em;
+      line-height:1.1;
+    }
+
+    .cart-line-value{
+      margin-top:4px;
+      color:#0B0F16;
+      font-size:12px;
+      font-weight:900;
+      line-height:1.12;
+    }
+
+    .cart-controls{
+      grid-template-columns:38px 48px 38px 1fr!important;
+      gap:7px!important;
+      margin-top:10px!important;
+    }
+
+    .cart-controls .round{
+      width:38px!important;
+      height:38px!important;
+      border-radius:12px!important;
+    }
+
+    .qty-display{
+      background:#F8FAFC;
+      border:1px solid rgba(215,221,229,.55);
+      border-radius:12px;
+      height:38px;
+      display:grid;
+      place-items:center;
+    }
+
+    .cart-adjustment-delta{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-top:5px;
+      border-radius:999px;
+      background:#FFFAEB;
+      color:#92400E;
+      padding:6px 8px;
+      font-size:11px;
+      font-weight:850;
+    }
+
+    .stock-adjustment-card{
+      border-radius:18px!important;
+      padding:13px!important;
+      line-height:1.45!important;
+    }
+
+    .stock-adjustment-card strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:13px;
+    }
+
+    .empty-cart-panel{
+      text-align:center;
+      padding:38px 18px;
+      background:#ffffff;
+      border:1px dashed rgba(215,221,229,.95);
+      border-radius:22px;
+    }
+
+    .empty-cart-icon{
+      width:46px;
+      height:46px;
+      border-radius:999px;
+      background:rgba(0,163,224,.10);
+      color:#0078A8;
+      display:grid;
+      place-items:center;
+      margin:0 auto 12px;
+      font-size:22px;
+      font-weight:900;
+    }
+
+    .empty-cart-title{
+      color:#0B0F16;
+      font-size:16px;
+      font-weight:900;
+      letter-spacing:-.025em;
+      margin-bottom:6px;
+    }
+
+    .empty-cart-copy{
+      color:#667085;
+      font-size:13px;
+      line-height:1.45;
+      font-weight:650;
+      max-width:280px;
+      margin:0 auto;
+    }
+
+    .submit-stage-text{
+      display:block;
+      color:#667085;
+      font-size:11.5px;
+      font-weight:700;
+      margin-top:4px;
+    }
+
+    @media (max-width:899px){
+      .cart-line-values{
+        grid-template-columns:1fr;
+      }
+
+      .cart-item{
+        grid-template-columns:58px 1fr!important;
+      }
+
+      .cart-controls{
+        grid-template-columns:36px 44px 36px 1fr!important;
+      }
+    }
+
+  
+    /* ==========================================================
+       UX PACKAGE 5A — PROFESSIONAL WHOLESALE FLOW
+       Cart drawer feel, success state, bulk quantity shortcuts.
+    ========================================================== */
+    .cart-drawer-panel{
+      animation:cartDrawerIn .22s ease-out both;
+    }
+
+    @keyframes cartDrawerIn{
+      from{opacity:0;transform:translateY(18px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    @media (max-width:899px){
+      #cartScreen.screen{
+        background:rgba(11,15,22,.44)!important;
+        align-items:flex-end!important;
+        justify-content:flex-end!important;
+        padding:0!important;
+      }
+
+      #cartScreen .screen-head{
+        width:100%!important;
+        border-radius:24px 24px 0 0!important;
+      }
+
+      #cartScreen .screen-body{
+        width:100%!important;
+        max-height:68vh!important;
+        background:#F5F7FA!important;
+        border-radius:0!important;
+      }
+
+      #cartScreen .cart-total-bar{
+        width:100%!important;
+        position:static!important;
+        border-radius:0!important;
+      }
+
+      #cartScreen .screen-head,
+      #cartScreen .screen-body,
+      #cartScreen .cart-total-bar{
+        max-width:680px!important;
+        margin:0 auto!important;
+      }
+    }
+
+    .qty-shortcuts{
+      display:flex;
+      gap:6px;
+      margin-top:7px;
+      flex-wrap:wrap;
+    }
+
+    .qty-shortcut{
+      min-height:28px;
+      border-radius:999px;
+      padding:0 9px;
+      background:#EEF2F7;
+      color:#344054;
+      font-size:11px;
+      font-weight:850;
+      border:1px solid rgba(215,221,229,.8);
+    }
+
+    .qty-shortcut:hover{
+      background:#E5F7FF;
+      color:#0078A8;
+      border-color:rgba(0,163,224,.28);
+    }
+
+    .order-success-panel{
+      background:#ffffff;
+      border:1px solid rgba(215,221,229,.72);
+      border-radius:22px;
+      padding:22px;
+      text-align:center;
+      box-shadow:0 8px 22px rgba(11,15,22,.055);
+    }
+
+    .order-success-icon{
+      width:54px;
+      height:54px;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      margin:0 auto 14px;
+      background:#ECFDF3;
+      color:#027A48;
+      font-size:28px;
+      font-weight:950;
+    }
+
+    .order-success-title{
+      color:#0B0F16;
+      font-size:20px;
+      font-weight:950;
+      letter-spacing:-.04em;
+      margin-bottom:7px;
+    }
+
+    .order-success-copy{
+      color:#667085;
+      font-size:13px;
+      line-height:1.5;
+      font-weight:650;
+      max-width:360px;
+      margin:0 auto 16px;
+    }
+
+    .order-success-meta{
+      background:#F8FAFC;
+      border:1px solid rgba(215,221,229,.55);
+      border-radius:16px;
+      padding:12px;
+      display:grid;
+      gap:7px;
+      margin:0 0 16px;
+      text-align:left;
+    }
+
+    .order-success-line{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      color:#667085;
+      font-size:12px;
+      font-weight:750;
+    }
+
+    .order-success-line strong{
+      color:#0B0F16;
+      font-weight:900;
+    }
+
+    .order-success-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+    }
+
+    @media (max-width:460px){
+      .order-success-actions{
+        grid-template-columns:1fr;
+      }
+    }
+
   </style>
 </head>
 
@@ -3537,7 +4270,10 @@
           </div>
           <button class="ghost-btn" style="min-height:40px" onclick="logout()">Logout</button>
         </div>
-        <input id="searchInput" class="search" type="search" placeholder="Search product, flavor, SKU..." oninput="debounceRenderCatalog()">
+        <div class="search-wrap">
+          <input id="searchInput" class="search" type="search" placeholder="Search product, flavor, SKU..." oninput="handleSearchInput()" onkeydown="handleSearchKey(event)">
+          <button id="searchClearBtn" class="search-clear" onclick="clearSearch()" type="button" aria-label="Clear search">×</button>
+        </div>
         <div id="categoryChips" class="chips"></div>
         <div class="filter-row-extra">
           <select id="brandFilter" class="modern-select" onchange="renderCatalog()">
@@ -3551,6 +4287,7 @@
             <option value="stock_desc">Stock available first</option>
           </select>
         </div>
+        <div id="filterSummary" class="filter-summary"></div>
         <div class="sync-row">
           <span id="syncStatus">Catalog ready</span>
           <button id="forceRefreshBtn" class="refresh-link" onclick="refreshCatalog(true)">Refresh catalog</button>
@@ -3593,6 +4330,7 @@
           <span>Total</span>
           <span id="reviewTotal">SRD 0</span>
         </div>
+        <span id="submitStageText" class="submit-stage-text"></span>
         <button id="submitBtn" class="primary" onclick="submitOrder()">Submit Order</button>
       </div>
     </div>
@@ -3866,6 +4604,7 @@
       if(btn){
         btn.disabled = true;
         btn.textContent = forceRefresh ? "Refreshing..." : "Updating...";
+        setSyncStatus(forceRefresh ? "Refreshing catalog..." : "Checking for updates...");
       }
 
       try{
@@ -3924,11 +4663,73 @@
       document.getElementById("loginScreen").classList.remove("hidden");
     }
 
+
+    function showCatalogSkeleton(count){
+      const list = document.getElementById("productList");
+      const empty = document.getElementById("emptyState");
+      if(!list) return;
+      if(empty) empty.classList.add("hidden");
+
+      const total = count || (window.innerWidth < 900 ? 6 : 8);
+      const cards = Array.from({length:total}).map(()=>`
+        <div class="skeleton-card">
+          <div class="skeleton-img"></div>
+          <div class="skeleton-body">
+            <div class="skeleton-line long"></div>
+            <div class="skeleton-line medium"></div>
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-button"></div>
+          </div>
+        </div>
+      `).join("");
+
+      list.innerHTML = `<div class="skeleton-grid">${cards}</div>`;
+    }
+
+    function bumpCartBar(){
+      const bar = document.getElementById("bottomCart");
+      if(!bar) return;
+      bar.classList.remove("cart-feedback-bump");
+      void bar.offsetWidth;
+      bar.classList.add("cart-feedback-bump");
+    }
+
+    function showAddedCheckNearElement(el){
+      if(!el) return;
+      const mark = document.createElement("div");
+      mark.className = "added-check";
+      mark.textContent = "✓";
+      el.appendChild(mark);
+      setTimeout(()=>{ try{ mark.remove(); }catch(e){} }, 850);
+    }
+
+    function flashAddedElement(el){
+      if(!el) return;
+      el.classList.remove("add-success-ring");
+      void el.offsetWidth;
+      el.classList.add("add-success-ring");
+      showAddedCheckNearElement(el);
+    }
+
+    function animateQtyDisplayForSku(sku){
+      const rows = document.querySelectorAll(".cart-item");
+      rows.forEach(row => {
+        if(row.innerText && row.innerText.includes(String(sku))){
+          const qty = row.querySelector(".qty-display");
+          if(qty){
+            qty.classList.remove("qty-step-feedback");
+            void qty.offsetWidth;
+            qty.classList.add("qty-step-feedback");
+          }
+        }
+      });
+    }
+
     async function bootApp(){
       document.getElementById("loginScreen").classList.add("hidden");
       document.getElementById("catalogScreen").classList.remove("hidden");
       document.getElementById("catalogStatus").textContent = "Loading catalog...";
-      document.getElementById("productList").innerHTML = "";
+      showCatalogSkeleton();
       updateBottomCart();
 
       const cached = loadCatalogCache();
@@ -4149,6 +4950,130 @@
     }
 
 
+
+    let catalogScrollY = 0;
+
+    function handleSearchInput(){
+      const input = document.getElementById("searchInput");
+      const clear = document.getElementById("searchClearBtn");
+      if(clear) clear.classList.toggle("show", !!(input && input.value.trim()));
+      debounceRenderCatalog();
+    }
+
+    function handleSearchKey(event){
+      if(event.key === "Escape"){
+        clearSearch();
+      }
+    }
+
+    function clearSearch(){
+      const input = document.getElementById("searchInput");
+      if(input) input.value = "";
+      const clear = document.getElementById("searchClearBtn");
+      if(clear) clear.classList.remove("show");
+      renderCatalog();
+      if(input) input.focus();
+    }
+
+    function clearBrandFilter(){
+      const sel = document.getElementById("brandFilter");
+      if(sel) sel.value = "";
+      renderCatalog();
+    }
+
+    function clearSortFilter(){
+      const sel = document.getElementById("sortFilter");
+      if(sel) sel.value = "default";
+      renderCatalog();
+    }
+
+    function setCategoryFilter(category){
+      selectedCategory = category || "";
+      buildCategoryChips();
+      renderCatalog();
+    }
+
+    function normalizeSearchText(s){
+      return String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+    }
+
+    function itemSearchText(i){
+      return normalizeSearchText([
+        i.sku,
+        i.product_name,
+        i.variant_name,
+        i.brand,
+        i.category,
+        i.all_categories,
+        i.product_type
+      ].join(" "));
+    }
+
+    function itemSearchScore(i, q){
+      if(!q) return 0;
+      const sku = normalizeSearchText(i.sku);
+      const name = normalizeSearchText(i.product_name);
+      const variant = normalizeSearchText(i.variant_name);
+      const brand = normalizeSearchText(i.brand);
+      const hay = itemSearchText(i);
+
+      if(sku === q) return 1000;
+      if(sku.startsWith(q)) return 900;
+      if(name.startsWith(q)) return 800;
+      if(brand.startsWith(q)) return 700;
+      if(variant.startsWith(q)) return 650;
+      if(hay.includes(q)) return 500;
+      return 0;
+    }
+
+    function renderFilterSummary(filteredItems, groupedProducts){
+      const holder = document.getElementById("filterSummary");
+      if(!holder) return;
+
+      const q = document.getElementById("searchInput") ? document.getElementById("searchInput").value.trim() : "";
+      const brand = document.getElementById("brandFilter") ? document.getElementById("brandFilter").value : "";
+      const sort = document.getElementById("sortFilter") ? document.getElementById("sortFilter").value : "default";
+
+      const pills = [];
+
+      if(q){
+        pills.push(`<span class="filter-pill">Search: ${esc(q)} <button onclick="clearSearch()" type="button">×</button></span>`);
+      }
+
+      if(selectedCategory){
+        pills.push(`<span class="filter-pill">Category: ${esc(selectedCategory)} <button onclick="setCategoryFilter('')" type="button">×</button></span>`);
+      }
+
+      if(brand){
+        pills.push(`<span class="filter-pill">Brand: ${esc(brand)} <button onclick="clearBrandFilter()" type="button">×</button></span>`);
+      }
+
+      if(sort && sort !== "default"){
+        const labelMap = {
+          profit_desc:"Highest earning potential",
+          price_asc:"Price low to high",
+          brand_az:"Brand A-Z",
+          stock_desc:"Stock first"
+        };
+        pills.push(`<span class="filter-pill">Sort: ${esc(labelMap[sort] || sort)} <button onclick="clearSortFilter()" type="button">×</button></span>`);
+      }
+
+      holder.innerHTML = pills.join("");
+    }
+
+    function updateResultSummary(filteredItems, groupedProducts){
+      const status = document.getElementById("catalogStatus");
+      if(!status) return;
+
+      const categories = new Set(filteredItems.map(i => i.category).filter(Boolean));
+      const brands = new Set(filteredItems.map(i => i.brand).filter(Boolean));
+
+      status.innerHTML =
+        `<span class="catalog-status-strong">${groupedProducts.length}</span> products` +
+        ` • ${categories.size} categories` +
+        ` • ${brands.size} brands`;
+    }
+
     function renderProductCard(g){
         const prices = g.variants.map(v=>Number(v.wholesale_price_srd || 0)).filter(n=>n>0);
         const from = prices.length ? Math.min(...prices) : 0;
@@ -4196,24 +5121,40 @@
     }
 
     function renderCatalog(){
-      const q = document.getElementById("searchInput").value.trim().toLowerCase();
-      const selectedBrand = document.getElementById("brandFilter") ? document.getElementById("brandFilter").value : "";
-      const filtered = catalog.filter(i=>{
-        const hay = [i.product_name,i.variant_name,i.sku,i.brand,i.category].join(" ").toLowerCase();
-        if(selectedCategory && i.category !== selectedCategory && !(String(i.all_categories || "").toLowerCase().split(",").map(x=>x.trim()).includes(String(selectedCategory).toLowerCase()))) return false;
-        if(selectedBrand && i.brand !== selectedBrand) return false;
-        if(q && !hay.includes(q)) return false;
-        return true;
-      });
-
-      grouped = groupCatalog(filtered);
       const list = document.getElementById("productList");
       const empty = document.getElementById("emptyState");
+      const qRaw = document.getElementById("searchInput").value.trim();
+      const q = normalizeSearchText(qRaw);
+      const selectedBrand = document.getElementById("brandFilter") ? document.getElementById("brandFilter").value : "";
 
-      document.getElementById("catalogStatus").textContent =
-        grouped.length + " product(s) • " + filtered.length + " variant(s)";
+      const filtered = catalog
+        .map(i => ({ item:i, score:itemSearchScore(i, q) }))
+        .filter(entry=>{
+          const i = entry.item;
+          const allCats = String(i.all_categories || "").toLowerCase().split(",").map(x=>x.trim());
+          if(selectedCategory && i.category !== selectedCategory && !allCats.includes(String(selectedCategory).toLowerCase())) return false;
+          if(selectedBrand && i.brand !== selectedBrand) return false;
+          if(q && entry.score <= 0) return false;
+          return true;
+        })
+        .sort((a,b)=>{
+          if(q) return b.score - a.score;
+          return 0;
+        })
+        .map(entry => entry.item);
 
-      empty.classList.toggle("hidden", grouped.length > 0);
+      grouped = groupCatalog(filtered);
+
+      renderFilterSummary(filtered, grouped);
+      updateResultSummary(filtered, grouped);
+
+      if(!grouped.length){
+        list.innerHTML = "";
+        empty.classList.remove("hidden");
+        return;
+      }
+
+      empty.classList.add("hidden");
 
       const groupedByCategory = groupProductsByCategory(grouped);
 
@@ -4230,7 +5171,9 @@
       `).join("");
     }
 
+
     function openProduct(key){
+      catalogScrollY = window.scrollY || document.documentElement.scrollTop || 0;
       activeGroup = grouped.find(g => String(g.key) === String(key)) ||
                     groupCatalog(catalog).find(g => String(g.key) === String(key));
       if(!activeGroup) return;
@@ -4257,8 +5200,133 @@
             <div class="small-note">Select variant and quantity below.</div>
           </div>
         </div>
-        <div class="variant-list">
-          ${(activeGroup.available_variants || activeGroup.variants.filter(v => stockNumber(v) > 0)).map(v => variantRow(v)).join("")}
+        ${renderDetailHero(activeGroup)}
+        <div>
+          <div class="variant-section-head">
+            <div class="variant-section-title">Available variants</div>
+            <div class="variant-section-count">${(activeGroup.available_variants || activeGroup.variants.filter(v => stockNumber(v) > 0)).length} option(s)</div>
+          </div>
+          <div class="variant-list">
+            ${(activeGroup.available_variants || activeGroup.variants.filter(v => stockNumber(v) > 0)).map(v => variantRow(v)).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+
+    function groupMinWholesale(group){
+      return minPositive((group.available_variants || group.variants || []).map(v => v.wholesale_price_srd));
+    }
+
+    function groupMinRetail(group){
+      return minPositive((group.available_variants || group.variants || []).map(v => getRetailSrd(v)));
+    }
+
+    function groupMaxProfit(group){
+      return maxPositive((group.available_variants || group.variants || []).map(v => profitForItem(v)));
+    }
+
+    function renderDetailHero(group){
+      const img = group.image_url
+        ? `<img class="detail-hero-img" src="${escAttr(group.image_url)}" loading="lazy">`
+        : `<div class="detail-hero-img"></div>`;
+
+      return `
+        <div class="detail-hero-card">
+          ${img}
+          <div class="detail-brand">${esc(group.brand || group.category || "Wholesale")}</div>
+          <div class="detail-title">${esc(group.product_name || "")}</div>
+
+          <div class="detail-summary-grid">
+            <div class="detail-summary-box">
+              <div class="detail-summary-label">Wholesale</div>
+              <div class="detail-summary-value">${money(groupMinWholesale(group))}</div>
+            </div>
+            <div class="detail-summary-box">
+              <div class="detail-summary-label">Retail</div>
+              <div class="detail-summary-value">${money(groupMinRetail(group))}</div>
+            </div>
+            <div class="detail-summary-box">
+              <div class="detail-summary-label">Earn up to</div>
+              <div class="detail-summary-value profit-positive">${money(groupMaxProfit(group))}</div>
+            </div>
+            <div class="detail-summary-box">
+              <div class="detail-summary-label">Available</div>
+              <div class="detail-summary-value">${group.available_stock_count || 0}/${(group.variants || []).length}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+
+    function adjustVariantQtyInput(sku, delta){
+      const input = document.getElementById("qty_" + safeId(sku));
+      if(!input) return;
+
+      const min = Number(input.getAttribute("min") || 1);
+      const current = Number(input.value || min);
+      const next = Math.max(min, current + Number(delta || 0));
+      input.value = next;
+
+      input.classList.remove("qty-step-feedback");
+      void input.offsetWidth;
+      input.classList.add("qty-step-feedback");
+    }
+
+    function setVariantQtyInput(sku, value){
+      const input = document.getElementById("qty_" + safeId(sku));
+      if(!input) return;
+
+      const min = Number(input.getAttribute("min") || 1);
+      input.value = Math.max(min, Number(value || min));
+
+      input.classList.remove("qty-step-feedback");
+      void input.offsetWidth;
+      input.classList.add("qty-step-feedback");
+    }
+
+    function qtyShortcutHtml(sku, min){
+      return `
+        <div class="qty-shortcuts">
+          <button class="qty-shortcut" type="button" onclick="adjustVariantQtyInput('${escAttr(sku)}',5)">+5</button>
+          <button class="qty-shortcut" type="button" onclick="adjustVariantQtyInput('${escAttr(sku)}',10)">+10</button>
+          <button class="qty-shortcut" type="button" onclick="setVariantQtyInput('${escAttr(sku)}',${Number(min || 1)})">MOQ</button>
+        </div>
+      `;
+    }
+
+    function renderOrderSuccess(res){
+      const body = document.getElementById("cartBody");
+      if(!body) return;
+
+      document.getElementById("cartSub").textContent = "Order submitted";
+      document.getElementById("reviewTotal").textContent = money(res.total_srd || 0);
+      setSubmitStage("");
+
+      body.innerHTML = `
+        <div class="order-success-panel">
+          <div class="order-success-icon">✓</div>
+          <div class="order-success-title">Order submitted</div>
+          <p class="order-success-copy">
+            Your wholesale order has been received. We will review and process it as soon as possible.
+          </p>
+
+          <div class="order-success-meta">
+            <div class="order-success-line">
+              <span>Order reference</span>
+              <strong>${esc(res.order_number || "Created")}</strong>
+            </div>
+            <div class="order-success-line">
+              <span>Total</span>
+              <strong>${money(res.total_srd || 0)}</strong>
+            </div>
+          </div>
+
+          <div class="order-success-actions">
+            <button class="ghost-btn" onclick="hideCart()">Continue browsing</button>
+            <button class="primary" onclick="hideCart()">Done</button>
+          </div>
         </div>
       `;
     }
@@ -4279,29 +5347,35 @@
         <div class="variant-row">
           ${img}
           <div>
-            <div class="v-name">${esc(name)}</div>
-            <div class="v-meta">SKU: ${esc(sku)} • MOQ: ${min}</div>
-            ${stockHtml}
+            <div class="variant-main-line">
+              <div>
+                <div class="v-name">${esc(name)}</div>
+                <div class="v-meta">SKU: ${esc(sku)} • MOQ: ${min}</div>
+                ${stockHtml}
+              </div>
+              <div class="variant-profit-chip">Earn ${money(profit)}</div>
+            </div>
 
-            <div class="variant-value-grid">
-              <div class="mini-metric">
-                <div class="mini-label">Wholesale</div>
-                <div class="mini-value">${money(v.wholesale_price_srd)}</div>
+            <div class="variant-commerce-grid">
+              <div class="variant-commerce-box">
+                <div class="variant-commerce-label">Wholesale</div>
+                <div class="variant-commerce-value">${money(v.wholesale_price_srd)}</div>
               </div>
-              <div class="mini-metric">
-                <div class="mini-label">Retail</div>
-                <div class="mini-value">${money(getRetailSrd(v))}</div>
+              <div class="variant-commerce-box">
+                <div class="variant-commerce-label">Retail</div>
+                <div class="variant-commerce-value">${money(getRetailSrd(v))}</div>
               </div>
-              <div class="mini-metric">
-                <div class="mini-label">Earn</div>
-                <div class="mini-value ${profit > 0 ? "profit-positive" : "profit-muted"}">${money(profit)}</div>
+              <div class="variant-commerce-box earn-box">
+                <div class="variant-commerce-label">Potential</div>
+                <div class="variant-commerce-value profit-positive">${money(profit)}</div>
               </div>
             </div>
 
-            <div class="v-actions">
+            <div class="variant-actions-polished">
               <input class="qty" id="qty_${safeId(sku)}" type="number" min="${min}" value="${min}" ${stockNumber(v) <= 0 ? "disabled" : ""}>
-              <button class="gold-btn" onclick="addVariant('${escAttr(sku)}')" ${stockNumber(v) <= 0 ? "disabled" : ""}>Add</button>
+              <button class="gold-btn" onclick="addVariant('${escAttr(sku)}')" ${stockNumber(v) <= 0 ? "disabled" : ""}>Add to cart</button>
             </div>
+            ${stockNumber(v) > 0 ? qtyShortcutHtml(sku, min) : ""}
           </div>
         </div>
       `;
@@ -4311,6 +5385,7 @@
       document.getElementById("productScreen").classList.add("hidden");
       activeGroup = null;
       updateBottomCart();
+      setTimeout(()=>window.scrollTo({ top: catalogScrollY || 0, behavior: "instant" }), 0);
     }
 
     function addVariant(sku){
@@ -4331,6 +5406,8 @@
 
       saveCart();
       updateBottomCart();
+      bumpCartBar();
+      flashAddedElement(input ? input.closest(".variant-row") : null);
       pulseBottomCart();
       flashVariantRowBySku(sku);
       toast("Added " + qty + " × " + (item.variant_name || item.product_name || "item"));
@@ -4362,21 +5439,68 @@
       const cartOpen = !document.getElementById("cartScreen").classList.contains("hidden");
       const loggedIn = document.getElementById("loginScreen").classList.contains("hidden");
 
-      bar.classList.toggle("hidden", qty <= 0 || productOpen || cartOpen || !loggedIn);
+      const shouldHide = qty <= 0 || productOpen || cartOpen || !loggedIn;
+      bar.classList.toggle("hidden", shouldHide);
+      bar.classList.toggle("cart-visible", !shouldHide);
 
       document.getElementById("bottomTotal").textContent = money(total);
-      document.getElementById("bottomCount").textContent = qty + " item(s) selected";
+      document.getElementById("bottomCount").innerHTML = qty + " item(s) selected" + (qty > 0 ? "<small>Tap to review your order</small>" : "");
     }
 
     function showCart(){
       renderCart();
       document.getElementById("cartScreen").classList.remove("hidden");
+      const cartScreen = document.getElementById("cartScreen");
+      cartScreen.classList.remove("cart-drawer-panel");
+      void cartScreen.offsetWidth;
+      cartScreen.classList.add("cart-drawer-panel");
       document.getElementById("bottomCart").classList.add("hidden");
     }
 
     function hideCart(){
       document.getElementById("cartScreen").classList.add("hidden");
       updateBottomCart();
+    }
+
+
+    function checkoutConfidenceHtml(){
+      return `
+        <div class="checkout-confidence">
+          <div class="checkout-confidence-title">Checkout protection</div>
+          <div class="checkout-confidence-item">
+            <span class="checkout-confidence-check">✓</span>
+            <span>Live stock is verified before your order is created.</span>
+          </div>
+          <div class="checkout-confidence-item">
+            <span class="checkout-confidence-check">✓</span>
+            <span>If stock changed, your cart is adjusted first and you review before submitting again.</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function emptyCartHtml(){
+      return `
+        <div class="empty-cart-panel">
+          <div class="empty-cart-icon">+</div>
+          <div class="empty-cart-title">Your cart is empty</div>
+          <p class="empty-cart-copy">Browse the wholesale catalog and add available variants to start your order.</p>
+        </div>
+      `;
+    }
+
+    function cartAdjustmentNote(row){
+      if(!row.stock_changed) return "";
+      return `
+        <div class="cart-adjustment-delta">
+          Adjusted: ${row.requested_qty || "requested"} → ${row.qty}
+        </div>
+      `;
+    }
+
+    function setSubmitStage(text){
+      const msg = document.getElementById("submitStageText");
+      if(msg) msg.textContent = text || "";
     }
 
     function renderCart(){
@@ -4388,7 +5512,7 @@
       const body = document.getElementById("cartBody");
 
       if(!rows.length){
-        body.innerHTML = `<div class="empty">Your cart is empty.</div>`;
+        body.innerHTML = emptyCartHtml();
         return;
       }
 
@@ -4400,7 +5524,7 @@
         </div>
       `;
 
-      body.innerHTML = stockAdjustmentSummaryHtml() + summaryHtml + rows.map(r=>{
+      body.innerHTML = stockAdjustmentSummaryHtml() + checkoutConfidenceHtml() + summaryHtml + rows.map(r=>{
         const i = r.item;
         const img = i.image_url
           ? `<img class="cart-thumb" src="${escAttr(i.image_url)}" loading="lazy">`
@@ -4412,7 +5536,20 @@
             ${img}
             <div>
               <div class="cart-title">${esc(i.product_name || "")}</div>
-              <div class="cart-meta">${esc(i.variant_name || "")}<br>SKU: ${esc(r.sku)}<br>Wholesale: ${money(i.wholesale_price_srd)} each • ${money(line)}<br>Retail: ${money(getRetailSrd(i))} each • Earn: ${money(profitForItem(i))} each</div>
+              <div class="cart-meta">${esc(i.variant_name || "")}<br>SKU: ${esc(r.sku)}</div>
+
+              <div class="cart-line-values">
+                <div class="cart-line-box">
+                  <div class="cart-line-label">Wholesale line</div>
+                  <div class="cart-line-value">${money(line)}</div>
+                </div>
+                <div class="cart-line-box">
+                  <div class="cart-line-label">Potential earning</div>
+                  <div class="cart-line-value profit-positive">${money(profitForItem(i) * Number(r.qty||0))}</div>
+                </div>
+              </div>
+
+              ${cartAdjustmentNote(r)}
               ${cartRowAdjustmentNote(r)}
               <div class="cart-controls">
                 <button class="round" onclick="changeQty('${escAttr(r.sku)}',-1)">−</button>
@@ -4438,6 +5575,8 @@
       saveCart();
       renderCart();
       updateBottomCart();
+      animateQtyDisplayForSku(sku);
+      bumpCartBar();
     }
 
     function removeItem(sku){
@@ -4494,8 +5633,8 @@
 
       return `
         <div class="stock-adjustment-card">
-          <strong>Stock changed while you were ordering.</strong><br>
-          I adjusted the cart to the current Ecwid stock. Please review and submit again.<br><br>
+          <strong>Live stock changed while you were ordering.</strong>
+          Your cart was adjusted to match current availability. Please review the highlighted changes and submit again.<br><br>
           ${lines}${more}
         </div>
       `;
@@ -4522,7 +5661,8 @@
       }
 
       const btn = document.getElementById("submitBtn");
-      setButtonBusy(btn, "Submitting...");
+      setButtonBusy(btn, "Checking stock...");
+      setSubmitStage("Verifying live stock availability...");
 
       const cartItems = rows.map(r => ({ sku:r.sku, qty:Number(r.qty||0) }));
 
@@ -4532,6 +5672,7 @@
         if(res.stock_changed){
           localStorage.removeItem(CATALOG_CACHE_KEY);
           applyStockAdjustedCart(res.adjusted_cart || []);
+          setSubmitStage("Cart adjusted. Review changes and submit again.");
           setMsg("cartMsg","error",res.message || "Some quantities changed. Please review the updated cart and submit again.");
           toast("Cart updated with live stock");
           return;
@@ -4543,12 +5684,12 @@
         }
 
         localStorage.removeItem(CATALOG_CACHE_KEY);
+        setSubmitStage("Order created successfully.");
         cart = {};
         lastStockAdjustments = [];
         saveCart();
-        renderCart();
         updateBottomCart();
-        setMsg("cartMsg","success","Order created: " + (res.order_number || "") + "\nTotal: " + money(res.total_srd));
+        renderOrderSuccess(res);
         toast("Order submitted");
       }catch(err){
         setMsg("cartMsg","error",err.message || String(err));
