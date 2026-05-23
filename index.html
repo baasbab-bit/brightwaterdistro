@@ -1741,20 +1741,628 @@
       }
     }
 
+  
+    /* ==========================================================
+       WHOLESALE BUSINESS VALUE UI
+       Uses retail_srd, wholesale_price_srd, brand, stock, and margin.
+    ========================================================== */
+    .filter-row-extra{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-top:8px;
+    }
+
+    .modern-select{
+      width:100%;
+      min-height:42px;
+      border-radius:14px;
+      border:1px solid #edf0f3;
+      background:#fff;
+      color:#111827;
+      padding:0 12px;
+      font-weight:700;
+      outline:none;
+    }
+
+    .value-strip{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:6px;
+      margin-top:6px;
+    }
+
+    .mini-metric{
+      background:#f8fafc;
+      border-radius:12px;
+      padding:7px 8px;
+      min-width:0;
+    }
+
+    .mini-label{
+      font-size:10px;
+      color:#667085;
+      font-weight:800;
+      line-height:1.1;
+      text-transform:uppercase;
+      letter-spacing:.03em;
+    }
+
+    .mini-value{
+      margin-top:2px;
+      font-size:12px;
+      color:#101828;
+      font-weight:850;
+      line-height:1.15;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .profit-positive{
+      color:#027a48!important;
+    }
+
+    .profit-muted{
+      color:#667085!important;
+    }
+
+    .stock-badge{
+      display:inline-flex;
+      align-items:center;
+      width:max-content;
+      max-width:100%;
+      border-radius:999px;
+      padding:4px 7px;
+      font-size:10.5px;
+      font-weight:850;
+      line-height:1;
+      white-space:nowrap;
+      margin-top:2px;
+    }
+
+    .stock-badge.in{
+      background:#ecfdf3;
+      color:#027a48;
+    }
+
+    .stock-badge.low{
+      background:#fffaeb;
+      color:#b54708;
+    }
+
+    .stock-badge.out{
+      background:#fff1f2;
+      color:#be123c;
+    }
+
+    .stock-badge.unlimited{
+      background:#eff6ff;
+      color:#175cd3;
+    }
+
+    .variant-value-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:6px;
+      margin-top:7px;
+    }
+
+    .cart-summary-card{
+      background:#fff;
+      border-radius:18px;
+      box-shadow:0 6px 18px rgba(17,24,39,.055);
+      padding:12px;
+      margin-bottom:10px;
+      display:grid;
+      gap:8px;
+    }
+
+    .cart-summary-line{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      font-size:13px;
+      color:#667085;
+      font-weight:750;
+    }
+
+    .cart-summary-line strong{
+      color:#101828;
+      font-size:15px;
+      font-weight:850;
+    }
+
+    .cart-summary-line.profit strong{
+      color:#027a48;
+    }
+
+    @media (max-width:899px){
+      .filter-row-extra{
+        grid-template-columns:1fr 1fr;
+        gap:7px;
+      }
+
+      .modern-select{
+        min-height:40px;
+        font-size:12px;
+        border-radius:13px;
+      }
+
+      .value-strip{
+        grid-template-columns:1fr;
+        gap:5px;
+      }
+
+      .mini-metric{
+        padding:6px 7px;
+      }
+
+      .mini-label{
+        font-size:9px;
+      }
+
+      .mini-value{
+        font-size:11px;
+      }
+
+      .variant-value-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (min-width:900px){
+      .filter-row-extra{
+        grid-template-columns:220px 220px;
+        justify-content:start;
+      }
+
+      .value-strip{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+  
+    .stock-adjustment-card{
+      background:#fff7ed;
+      color:#9a3412;
+      border:1px solid #fed7aa;
+      border-radius:16px;
+      padding:12px;
+      margin-bottom:10px;
+      font-size:13px;
+      line-height:1.35;
+      font-weight:750;
+    }
+
+    .stock-adjustment-card strong{
+      color:#7c2d12;
+    }
+
+    .cart-item.stock-changed{
+      background:#fff7ed!important;
+      box-shadow:0 0 0 2px #fed7aa inset, 0 6px 18px rgba(17,24,39,.055)!important;
+    }
+
+    .stock-change-note{
+      margin-top:7px;
+      background:#ffedd5;
+      color:#9a3412;
+      border-radius:12px;
+      padding:7px 8px;
+      font-size:12px;
+      font-weight:800;
+      line-height:1.3;
+    }
+
+  
+    .sync-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      margin-top:7px;
+      color:#667085;
+      font-size:11.5px;
+      font-weight:700;
+    }
+
+    .refresh-link{
+      border:0;
+      background:transparent;
+      color:#475467;
+      padding:4px 2px;
+      font-size:11.5px;
+      font-weight:800;
+      text-decoration:underline;
+      text-underline-offset:3px;
+      cursor:pointer;
+    }
+
+    .refresh-link:disabled{
+      opacity:.55;
+      cursor:not-allowed;
+    }
+
+  
+    .category-section{
+      margin:0 0 22px;
+    }
+
+    .category-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin:10px 2px 10px;
+      color:#101828;
+      font-size:16px;
+      font-weight:900;
+      letter-spacing:-.02em;
+    }
+
+    .category-count{
+      color:#667085;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .category-products{
+      display:grid;
+      gap:9px;
+    }
+
+    @media (max-width:899px){
+      .category-products{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+      .category-title{
+        font-size:15px;
+        margin-top:12px;
+      }
+    }
+
+    @media (min-width:900px){
+      .category-products{
+        grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+        gap:18px;
+      }
+    }
+
+    @media (min-width:1200px){
+      .category-products{
+        grid-template-columns:repeat(4, minmax(0,1fr));
+      }
+    }
+
+    @media (min-width:1500px){
+      .category-products{
+        grid-template-columns:repeat(5, minmax(0,1fr));
+      }
+    }
+
+  
+    .product-list{
+      display:block!important;
+    }
+
+  
+    /* ==========================================================
+       SIMPLE CLEAN LOGIN
+       Minimal split layout inspired by modern SaaS login screens.
+       No social login, no heavy visual noise.
+    ========================================================== */
+    .simple-login{
+      min-height:100vh;
+      padding:22px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#e8e8e8!important;
+    }
+
+    .simple-login-shell{
+      width:min(1120px,100%);
+      min-height:620px;
+      display:grid;
+      grid-template-columns:1fr 1.08fr;
+      background:#f8fbff;
+      box-shadow:0 30px 80px rgba(15,23,42,.18);
+      overflow:hidden;
+    }
+
+    .simple-login-panel{
+      background:#f8fbff;
+      padding:42px 46px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .simple-brand{
+      color:#14532d;
+      font-size:24px;
+      font-weight:950;
+      letter-spacing:-.04em;
+      margin-bottom:50px;
+    }
+
+    .simple-form-wrap{
+      width:100%;
+      max-width:420px;
+      margin:0 auto;
+    }
+
+    .simple-login-title{
+      margin:0 0 10px;
+      color:#171821;
+      font-size:38px;
+      line-height:1.05;
+      letter-spacing:-.05em;
+      font-weight:900;
+    }
+
+    .simple-login-sub{
+      margin:0 0 30px;
+      color:#7b8494;
+      font-size:14px;
+      font-weight:650;
+    }
+
+    .simple-label{
+      display:block;
+      margin:0 0 8px;
+      color:#7b8494;
+      font-size:12px;
+      font-weight:850;
+    }
+
+    .simple-field{
+      margin-bottom:18px;
+    }
+
+    .simple-field input{
+      min-height:48px!important;
+      border-radius:11px!important;
+      border:1px solid #dbe3ee!important;
+      background:#f8fbff!important;
+      color:#111827!important;
+      font-size:14px!important;
+      padding:0 14px!important;
+      box-shadow:none!important;
+      transition:border-color .15s ease, background .15s ease, box-shadow .15s ease;
+    }
+
+    .simple-field input:focus{
+      background:#ffffff!important;
+      border-color:#14532d!important;
+      box-shadow:0 0 0 4px rgba(20,83,45,.08)!important;
+    }
+
+    .simple-login-btn{
+      min-height:50px!important;
+      border-radius:13px!important;
+      background:#14532d!important;
+      color:#ffffff!important;
+      font-size:14px!important;
+      font-weight:900!important;
+      box-shadow:none!important;
+      margin-top:8px;
+    }
+
+    .simple-login-btn:hover{
+      background:#0f3f25!important;
+    }
+
+    .simple-note{
+      margin:20px 0 0;
+      color:#98a2b3;
+      text-align:center;
+      font-size:12px;
+      font-weight:650;
+    }
+
+    .simple-feature-panel{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 70% 12%, rgba(255,255,255,.20), transparent 28%),
+        linear-gradient(135deg,#104426 0%,#14532d 48%,#0b3320 100%);
+      color:#ffffff;
+      padding:48px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .simple-feature-panel::before{
+      content:"";
+      position:absolute;
+      width:440px;
+      height:440px;
+      border-radius:999px;
+      right:-160px;
+      top:-160px;
+      background:rgba(255,255,255,.10);
+    }
+
+    .simple-support{
+      position:relative;
+      z-index:1;
+      align-self:flex-end;
+      color:#d1fae5;
+      font-size:13px;
+      font-weight:850;
+    }
+
+    .simple-feature-card{
+      position:relative;
+      z-index:1;
+      width:min(420px,100%);
+      margin:0 auto;
+      padding:32px;
+      border-radius:18px;
+      background:#f8fbff;
+      color:#14532d;
+      box-shadow:0 26px 60px rgba(0,0,0,.18);
+    }
+
+    .simple-card-kicker{
+      color:#64748b;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      margin-bottom:12px;
+    }
+
+    .simple-feature-card h2{
+      margin:0 0 14px;
+      color:#14532d;
+      font-size:28px;
+      line-height:1.05;
+      letter-spacing:-.04em;
+      font-weight:950;
+    }
+
+    .simple-feature-card p{
+      margin:0;
+      color:#64748b;
+      font-size:14px;
+      line-height:1.65;
+      font-weight:650;
+    }
+
+    .simple-feature-bottom{
+      position:relative;
+      z-index:1;
+      text-align:center;
+      max-width:520px;
+      margin:0 auto;
+    }
+
+    .simple-feature-bottom h3{
+      margin:0 0 14px;
+      color:#f8fafc;
+      font-size:31px;
+      line-height:1.1;
+      letter-spacing:-.045em;
+      font-weight:950;
+    }
+
+    .simple-feature-bottom p{
+      margin:0 auto;
+      max-width:480px;
+      color:#cdebdc;
+      font-size:14px;
+      line-height:1.6;
+      font-weight:650;
+    }
+
+    @media (max-width:899px){
+      .simple-login{
+        padding:0;
+        background:#e8e8e8!important;
+      }
+
+      .simple-login-shell{
+        width:100%;
+        min-height:100vh;
+        display:block;
+        box-shadow:none;
+        background:#e8e8e8;
+      }
+
+      .simple-feature-panel{
+        display:none;
+      }
+
+      .simple-login-panel{
+        min-height:100vh;
+        max-width:430px;
+        margin:0 auto;
+        background:#ffffff;
+        padding:34px 28px;
+        justify-content:center;
+      }
+
+      .simple-brand{
+        font-size:23px;
+        margin-bottom:46px;
+      }
+
+      .simple-login-title{
+        font-size:34px;
+      }
+
+      .simple-login-sub{
+        margin-bottom:28px;
+      }
+
+      .simple-form-wrap{
+        max-width:100%;
+      }
+
+      .simple-field input{
+        min-height:50px!important;
+      }
+
+      .simple-login-btn{
+        min-height:52px!important;
+      }
+    }
+
   </style>
 </head>
 
 <body>
   <div class="app">
 
-    <section id="loginScreen" class="login-wrap">
-      <div class="login-card">
-        <h1 class="logo-title">KevinJuices Wholesale</h1>
-        <p class="sub">Login to view your wholesale catalog, variant stock, and pricing.</p>
-        <div id="loginMsg" class="msg"></div>
-        <div class="field"><input id="email" type="email" placeholder="Email" autocomplete="username"></div>
-        <div class="field"><input id="password" type="password" placeholder="Password" autocomplete="current-password"></div>
-        <button class="primary" id="loginBtn" onclick="login()">Login</button>
+    <section id="loginScreen" class="login-wrap simple-login">
+      <div class="simple-login-shell">
+        <div class="simple-login-panel">
+          <div class="simple-brand">KevinJuices</div>
+
+          <div class="simple-form-wrap">
+            <h1 class="simple-login-title">Sign in</h1>
+            <p class="simple-login-sub">Access your wholesale catalog.</p>
+
+            <div id="loginMsg" class="msg"></div>
+
+            <label class="simple-label" for="email">E-mail</label>
+            <div class="field simple-field">
+              <input id="email" type="email" placeholder="example@email.com" autocomplete="username">
+            </div>
+
+            <label class="simple-label" for="password">Password</label>
+            <div class="field simple-field">
+              <input id="password" type="password" placeholder="••••••••" autocomplete="current-password">
+            </div>
+
+            <div class="login-links-row">
+              <button type="button" class="login-text-link left-link" onclick="openRequestModal('reset')">Forgot password?</button>
+              <button type="button" class="login-text-link right-link" onclick="openRequestModal('register')">Request access</button>
+            </div>
+
+            <button class="primary simple-login-btn" id="loginBtn" onclick="login()">Sign in</button>
+
+            <p class="simple-note">Authorized wholesale customers only.</p>
+          </div>
+        </div>
+
+        <div class="simple-feature-panel">
+          <div class="simple-support">Wholesale Portal</div>
+
+          <div class="simple-feature-card">
+            <div class="simple-card-kicker">Private catalog</div>
+            <h2>Order faster with live stock checks.</h2>
+            <p>View dealer pricing, available variants, retail value, and submit orders directly into the normal Ecwid workflow.</p>
+          </div>
+
+          <div class="simple-feature-bottom">
+            <h3>Built for retail partners</h3>
+            <p>Clean ordering, stock validation, and wholesale pricing in one simple portal.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1767,8 +2375,24 @@
           </div>
           <button class="ghost-btn" style="min-height:40px" onclick="logout()">Logout</button>
         </div>
-        <input id="searchInput" class="search" type="search" placeholder="Search product, flavor, SKU..." oninput="renderCatalog()">
+        <input id="searchInput" class="search" type="search" placeholder="Search product, flavor, SKU..." oninput="debounceRenderCatalog()">
         <div id="categoryChips" class="chips"></div>
+        <div class="filter-row-extra">
+          <select id="brandFilter" class="modern-select" onchange="renderCatalog()">
+            <option value="">All brands</option>
+          </select>
+          <select id="sortFilter" class="modern-select" onchange="renderCatalog()">
+            <option value="default">Default sort</option>
+            <option value="profit_desc">Highest earning potential</option>
+            <option value="price_asc">Wholesale price: low to high</option>
+            <option value="brand_az">Brand A-Z</option>
+            <option value="stock_desc">Stock available first</option>
+          </select>
+        </div>
+        <div class="sync-row">
+          <span id="syncStatus">Catalog ready</span>
+          <button id="forceRefreshBtn" class="refresh-link" onclick="refreshCatalog(true)">Refresh catalog</button>
+        </div>
       </header>
 
       <main>
@@ -1822,6 +2446,72 @@
     </div>
   </section>
 
+
+  <section id="requestModal" class="request-modal hidden" onclick="modalBackdropClose(event)">
+    <div class="request-card" role="dialog" aria-modal="true" aria-labelledby="requestModalTitle">
+      <button class="request-close" onclick="closeRequestModal()" aria-label="Close">×</button>
+
+      <div class="request-head">
+        <h2 id="requestModalTitle">Request Access</h2>
+        <p id="requestModalSub">Send your request through WhatsApp.</p>
+      </div>
+
+      <div id="requestMsg" class="msg"></div>
+
+      <div id="registerFields" class="request-fields hidden">
+        <label class="simple-label">Business name</label>
+        <input id="regBusinessName" class="request-input" type="text" placeholder="Your business name">
+
+        <label class="simple-label">Contact person</label>
+        <input id="regContactName" class="request-input" type="text" placeholder="Full name">
+
+        <label class="simple-label">Phone / WhatsApp</label>
+        <input id="regPhone" class="request-input" type="tel" placeholder="+597...">
+
+        <label class="simple-label">Email</label>
+        <input id="regEmail" class="request-input" type="email" placeholder="email@example.com">
+
+        <label class="simple-label">Business location</label>
+        <input id="regLocation" class="request-input" type="text" placeholder="City / area">
+
+        <label class="simple-label">How did you hear about us?</label>
+        <select id="regSource" class="request-input">
+          <option value="">Select one</option>
+          <option>Existing customer</option>
+          <option>Instagram</option>
+          <option>Facebook</option>
+          <option>WhatsApp</option>
+          <option>Referral</option>
+          <option>Google</option>
+          <option>Other</option>
+        </select>
+
+        <label class="simple-label">Additional notes</label>
+        <textarea id="regNotes" class="request-input request-textarea" placeholder="Optional"></textarea>
+      </div>
+
+      <div id="resetFields" class="request-fields hidden">
+        <label class="simple-label">Business name</label>
+        <input id="resetBusinessName" class="request-input" type="text" placeholder="Your business name">
+
+        <label class="simple-label">Contact person</label>
+        <input id="resetContactName" class="request-input" type="text" placeholder="Full name">
+
+        <label class="simple-label">Registered email</label>
+        <input id="resetEmail" class="request-input" type="email" placeholder="email@example.com">
+
+        <label class="simple-label">Phone / WhatsApp</label>
+        <input id="resetPhone" class="request-input" type="tel" placeholder="+597...">
+
+        <label class="simple-label">Notes</label>
+        <textarea id="resetNotes" class="request-input request-textarea" placeholder="Optional"></textarea>
+      </div>
+
+      <button id="requestSubmitBtn" class="primary request-submit" onclick="submitRequestModal()">Send request</button>
+    </div>
+  </section>
+
+
   <div id="toast" class="toast"></div>
 
   <script>
@@ -1832,6 +2522,10 @@
     let selectedCategory = "";
     let activeGroup = null;
     let cart = loadCart();
+    let lastStockAdjustments = [];
+    const CATALOG_CACHE_KEY = "ws_catalog_cache_v4";
+    const CUSTOMER_CACHE_KEY = "ws_customer_cache_v4";
+    let searchDebounceTimer = null;
 
     // IMPORTANT:
     // Replace this with your deployed Apps Script Web App /exec URL.
@@ -1848,14 +2542,18 @@
       }
 
       if (fn === "getWholesaleCatalog") {
-        return apiJsonp("getCatalog", { token: args[0] || "", filters: JSON.stringify(args[1] || {}) });
+        return apiJsonp("getCatalog", {
+          token: args[0] || "",
+          filters: JSON.stringify(args[1] || {}),
+          forceRefresh: args[2] ? "true" : ""
+        });
       }
 
       if (fn === "validateWholesaleCart") {
         return apiJsonp("validateCart", { token: args[0] || "", cart: JSON.stringify(args[1] || []) });
       }
 
-      if (fn === "submitWholesaleOrderToEcwid") {
+      if (fn === "submitWholesaleOrderLogOnly") {
         return apiJsonp("submitOrder", { token: args[0] || "", cart: JSON.stringify(args[1] || []) });
       }
 
@@ -1961,6 +2659,87 @@
       localStorage.setItem("ws_cart_v2", JSON.stringify(cart));
     }
 
+
+    function saveCatalogCache(response){
+      try{
+        localStorage.setItem(CATALOG_CACHE_KEY, JSON.stringify({
+          ts: Date.now(),
+          response: response
+        }));
+      }catch(e){}
+    }
+
+    function loadCatalogCache(){
+      try{
+        const raw = localStorage.getItem(CATALOG_CACHE_KEY);
+        if(!raw) return null;
+        const parsed = JSON.parse(raw);
+        if(!parsed || !parsed.response || !Array.isArray(parsed.response.items)) return null;
+        return parsed;
+      }catch(e){
+        return null;
+      }
+    }
+
+    function applyCatalogResponse(res, sourceLabel){
+      catalog = (res.items || []).map(x => ({
+        ...x,
+        ecwid_product_id: x.ecwid_product_id || x.product_id || "",
+        ecwid_variation_id: x.ecwid_variation_id || x.variation_id || ""
+      }));
+
+      customer = res.customer || customer || {};
+
+      document.getElementById("customerInfo").textContent =
+        (customer.business_name || "") + (customer.price_tier ? " • " + customer.price_tier : "");
+
+      try{ localStorage.setItem(CUSTOMER_CACHE_KEY, JSON.stringify(customer)); }catch(e){}
+
+      buildCategoryChips();
+      buildBrandFilter();
+      renderCatalog();
+
+      const generated = res.generated_at ? new Date(res.generated_at) : null;
+      const timeText = generated && !isNaN(generated.getTime())
+        ? generated.toLocaleString(undefined,{month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"})
+        : "now";
+
+      const cacheText = res.cached ? "server cache" : (sourceLabel || "fresh");
+      setSyncStatus("Catalog updated: " + timeText + " • " + cacheText);
+    }
+
+    function setSyncStatus(text){
+      const el = document.getElementById("syncStatus");
+      if(el) el.textContent = text;
+    }
+
+    async function refreshCatalog(forceRefresh){
+      const btn = document.getElementById("forceRefreshBtn");
+      if(btn){
+        btn.disabled = true;
+        btn.textContent = forceRefresh ? "Refreshing..." : "Updating...";
+      }
+
+      try{
+        const res = await gas("getWholesaleCatalog", token, {}, !!forceRefresh);
+        saveCatalogCache(res);
+        applyCatalogResponse(res, forceRefresh ? "forced refresh" : "background refresh");
+      }catch(err){
+        setSyncStatus("Catalog refresh failed");
+        if(forceRefresh) toast(err.message || String(err));
+      }finally{
+        if(btn){
+          btn.disabled = false;
+          btn.textContent = "Refresh catalog";
+        }
+      }
+    }
+
+    function debounceRenderCatalog(){
+      clearTimeout(searchDebounceTimer);
+      searchDebounceTimer = setTimeout(renderCatalog, 160);
+    }
+
     async function login(){
       setMsg("loginMsg","","");
       const btn = document.getElementById("loginBtn");
@@ -2004,18 +2783,18 @@
       document.getElementById("productList").innerHTML = "";
       updateBottomCart();
 
+      const cached = loadCatalogCache();
+      if(cached && cached.response){
+        applyCatalogResponse(cached.response, "device cache");
+        document.getElementById("catalogStatus").textContent = "Loaded from device cache";
+        refreshCatalog(false);
+        return;
+      }
+
       try{
-        const res = await gas("getWholesaleCatalog", token, {});
-        catalog = (res.items || []).map(x => ({
-          ...x,
-          ecwid_product_id: x.ecwid_product_id || x.product_id || "",
-          ecwid_variation_id: x.ecwid_variation_id || x.variation_id || ""
-        }));
-        customer = res.customer || customer || {};
-        document.getElementById("customerInfo").textContent =
-          (customer.business_name || "") + (customer.price_tier ? " • " + customer.price_tier : "");
-        buildCategoryChips();
-        renderCatalog();
+        const res = await gas("getWholesaleCatalog", token, {}, false);
+        saveCatalogCache(res);
+        applyCatalogResponse(res, res.cached ? "server cache" : "fresh");
       }catch(err){
         document.getElementById("catalogStatus").textContent = err.message || String(err);
       }
@@ -2041,6 +2820,118 @@
       });
     }
 
+
+    function num(v){
+      const n = Number(v || 0);
+      return isNaN(n) ? 0 : n;
+    }
+
+    function roundToNearestFiveFront(n){
+      n = num(n);
+      return n ? Math.round(n / 5) * 5 : 0;
+    }
+
+    function getRetailSrd(item){
+      // Preferred backend field.
+      if (num(item.retail_srd) > 0) return num(item.retail_srd);
+
+      // Backward compatibility if backend still sends older field names.
+      if (num(item.retail_price_srd) > 0) return num(item.retail_price_srd);
+
+      // Fallback: calculate from Ecwid USD retail price.
+      if (num(item.retail_price_usd) > 0) {
+        return roundToNearestFiveFront(num(item.retail_price_usd) * 38.25);
+      }
+
+      return 0;
+    }
+
+    function profitForItem(item){
+      return Math.max(0, getRetailSrd(item) - num(item.wholesale_price_srd));
+    }
+
+    function stockNumber(item){
+      const s = String(item.stock ?? "").trim().toUpperCase();
+      if (s === "UNLIMITED") return 999999;
+      const n = Number(item.stock || 0);
+      return isNaN(n) ? 0 : n;
+    }
+
+    function stockStatus(item){
+      const s = String(item.stock ?? "").trim().toUpperCase();
+
+      if (s === "UNLIMITED") {
+        return { label:"Available", cls:"unlimited" };
+      }
+
+      const n = Number(item.stock || 0);
+
+      if (!n || n <= 0) {
+        return { label:"Out of stock", cls:"out" };
+      }
+
+      if (n <= 5) {
+        return { label:"Low stock: " + n, cls:"low" };
+      }
+
+      return { label:"In stock: " + n, cls:"in" };
+    }
+
+    function stockBadgeHtml(item){
+      const st = stockStatus(item);
+      return `<span class="stock-badge ${st.cls}">${esc(st.label)}</span>`;
+    }
+
+    function minPositive(values){
+      const nums = values.map(num).filter(n => n > 0);
+      return nums.length ? Math.min(...nums) : 0;
+    }
+
+    function maxPositive(values){
+      const nums = values.map(num).filter(n => n > 0);
+      return nums.length ? Math.max(...nums) : 0;
+    }
+
+    function buildBrandFilter(){
+      const sel = document.getElementById("brandFilter");
+      if (!sel) return;
+
+      const current = sel.value || "";
+      const brands = [...new Set(catalog.map(i => i.brand).filter(Boolean))].sort();
+
+      sel.innerHTML = '<option value="">All brands</option>';
+      brands.forEach(brand => {
+        const opt = document.createElement("option");
+        opt.value = brand;
+        opt.textContent = brand;
+        sel.appendChild(opt);
+      });
+
+      sel.value = current;
+    }
+
+    function sortGroups(groups){
+      const sort = document.getElementById("sortFilter") ? document.getElementById("sortFilter").value : "default";
+
+      if (sort === "profit_desc") {
+        return groups.sort((a,b) => num(b.max_profit_srd) - num(a.max_profit_srd));
+      }
+
+      if (sort === "price_asc") {
+        return groups.sort((a,b) => num(a.min_wholesale_srd) - num(b.min_wholesale_srd));
+      }
+
+      if (sort === "brand_az") {
+        return groups.sort((a,b) => String(a.brand || "").localeCompare(String(b.brand || "")) || String(a.product_name).localeCompare(String(b.product_name)));
+      }
+
+      if (sort === "stock_desc") {
+        return groups.sort((a,b) => num(b.available_stock_count) - num(a.available_stock_count));
+      }
+
+      return groups.sort((a,b) => String(a.product_name).localeCompare(String(b.product_name)));
+    }
+
     function groupCatalog(rows){
       const map = {};
       rows.forEach(item=>{
@@ -2049,38 +2940,68 @@
           map[key] = {
             key,
             product_name:item.product_name || "",
-            category:item.category || "",
+            category:item.category || item.display_category || "",
+            all_categories:item.all_categories || "",
             brand:item.brand || "",
             image_url:item.image_url || "",
-            variants:[]
+            variants:[],
+            min_wholesale_srd:0,
+            min_retail_srd:0,
+            max_profit_srd:0,
+            available_stock_count:0
           };
         }
+
         if(!map[key].image_url && item.image_url) map[key].image_url = item.image_url;
+        if(!map[key].brand && item.brand) map[key].brand = item.brand;
+        if(!map[key].category && item.category) map[key].category = item.category;
+
         map[key].variants.push(item);
       });
 
-      return Object.values(map).sort((a,b)=>String(a.product_name).localeCompare(String(b.product_name)));
+      const groups = Object.values(map).map(g => {
+        g.available_variants = g.variants.filter(v => stockNumber(v) > 0);
+        g.available_stock_count = g.available_variants.length;
+
+        // Use only available variants for customer-facing card pricing.
+        // This prevents showing "from" prices for variants that cannot be ordered.
+        const priceSource = g.available_variants.length ? g.available_variants : g.variants;
+
+        g.min_wholesale_srd = minPositive(priceSource.map(v => v.wholesale_price_srd));
+        g.min_retail_srd = minPositive(priceSource.map(v => getRetailSrd(v)));
+        g.max_profit_srd = maxPositive(priceSource.map(v => profitForItem(v)));
+
+        return g;
+      })
+      // Hide products where none of the variants are available.
+      .filter(g => g.available_stock_count > 0);
+
+      return sortGroups(groups);
     }
 
-    function renderCatalog(){
-      const q = document.getElementById("searchInput").value.trim().toLowerCase();
-      const filtered = catalog.filter(i=>{
-        const hay = [i.product_name,i.variant_name,i.sku,i.brand,i.category].join(" ").toLowerCase();
-        if(selectedCategory && i.category !== selectedCategory) return false;
-        if(q && !hay.includes(q)) return false;
-        return true;
+
+    function getGroupCategoryName(group){
+      return group.category || "Other";
+    }
+
+    function groupProductsByCategory(groups){
+      const map = {};
+      groups.forEach(g => {
+        const cat = getGroupCategoryName(g);
+        if(!map[cat]) map[cat] = [];
+        map[cat].push(g);
       });
 
-      grouped = groupCatalog(filtered);
-      const list = document.getElementById("productList");
-      const empty = document.getElementById("emptyState");
+      return Object.keys(map)
+        .sort((a,b) => a.localeCompare(b))
+        .map(category => ({
+          category,
+          products: map[category]
+        }));
+    }
 
-      document.getElementById("catalogStatus").textContent =
-        grouped.length + " product(s) • " + filtered.length + " variant(s)";
 
-      empty.classList.toggle("hidden", grouped.length > 0);
-
-      list.innerHTML = grouped.map(g=>{
+    function renderProductCard(g){
         const prices = g.variants.map(v=>Number(v.wholesale_price_srd || 0)).filter(n=>n>0);
         const from = prices.length ? Math.min(...prices) : 0;
         const stockCount = g.variants.filter(v=>{
@@ -2096,19 +3017,69 @@
           <article class="product-row" onclick="openProduct('${escAttr(g.key)}')">
             ${img}
             <div class="p-info">
+              <div class="p-meta">${esc(g.brand || g.category || "Wholesale")}</div>
               <div class="p-title">${esc(g.product_name)}</div>
-              <div class="p-meta">${esc(g.category || "Wholesale")}</div>
+
+              <div class="value-strip">
+                <div class="mini-metric">
+                  <div class="mini-label">Wholesale</div>
+                  <div class="mini-value">${money(g.min_wholesale_srd)}</div>
+                </div>
+                <div class="mini-metric">
+                  <div class="mini-label">Retail</div>
+                  <div class="mini-value">${money(g.min_retail_srd)}</div>
+                </div>
+              </div>
+
+              <div class="mini-metric">
+                <div class="mini-label">Potential earning</div>
+                <div class="mini-value profit-positive">Up to ${money(g.max_profit_srd)} each</div>
+              </div>
+
               <div class="p-bottom">
                 <div>
-                  <div class="price">From ${money(from)}</div>
-                  <div class="small-note">${g.variants.length} variant(s) • ${stockCount} in stock</div>
+                  <div class="small-note">${g.available_stock_count} of ${g.variants.length} variant(s) available</div>
                 </div>
                 <button class="select-btn" onclick="event.stopPropagation();openProduct('${escAttr(g.key)}')">View</button>
               </div>
             </div>
           </article>
         `;
-      }).join("");
+    }
+
+    function renderCatalog(){
+      const q = document.getElementById("searchInput").value.trim().toLowerCase();
+      const selectedBrand = document.getElementById("brandFilter") ? document.getElementById("brandFilter").value : "";
+      const filtered = catalog.filter(i=>{
+        const hay = [i.product_name,i.variant_name,i.sku,i.brand,i.category].join(" ").toLowerCase();
+        if(selectedCategory && i.category !== selectedCategory && !(String(i.all_categories || "").toLowerCase().split(",").map(x=>x.trim()).includes(String(selectedCategory).toLowerCase()))) return false;
+        if(selectedBrand && i.brand !== selectedBrand) return false;
+        if(q && !hay.includes(q)) return false;
+        return true;
+      });
+
+      grouped = groupCatalog(filtered);
+      const list = document.getElementById("productList");
+      const empty = document.getElementById("emptyState");
+
+      document.getElementById("catalogStatus").textContent =
+        grouped.length + " product(s) • " + filtered.length + " variant(s)";
+
+      empty.classList.toggle("hidden", grouped.length > 0);
+
+      const groupedByCategory = groupProductsByCategory(grouped);
+
+      list.innerHTML = groupedByCategory.map(section => `
+        <section class="category-section">
+          <div class="category-title">
+            <span>${esc(section.category)}</span>
+            <span class="category-count">${section.products.length} product(s)</span>
+          </div>
+          <div class="category-products">
+            ${section.products.map(g => renderProductCard(g)).join("")}
+          </div>
+        </section>
+      `).join("");
     }
 
     function openProduct(key){
@@ -2139,7 +3110,7 @@
           </div>
         </div>
         <div class="variant-list">
-          ${activeGroup.variants.map(v => variantRow(v)).join("")}
+          ${(activeGroup.available_variants || activeGroup.variants.filter(v => stockNumber(v) > 0)).map(v => variantRow(v)).join("")}
         </div>
       `;
     }
@@ -2147,9 +3118,10 @@
     function variantRow(v){
       const sku = String(v.sku || "");
       const min = Number(v.min_qty || 1);
-      const stockText = v.stock === null || v.stock === undefined || v.stock === "" ? "Stock hidden" : "Stock: " + v.stock;
       const name = v.variant_name || "Default";
       const imgUrl = v.image_url || activeGroup?.image_url || "";
+      const profit = profitForItem(v);
+      const stockHtml = stockBadgeHtml(v);
 
       const img = imgUrl
         ? `<img class="v-img" src="${escAttr(imgUrl)}" loading="lazy" onerror="this.src='';this.style.display='none'">`
@@ -2160,11 +3132,27 @@
           ${img}
           <div>
             <div class="v-name">${esc(name)}</div>
-            <div class="v-meta">SKU: ${esc(sku)}<br>${esc(stockText)} • Min: ${min}</div>
-            <div class="price" style="margin-top:5px">${money(v.wholesale_price_srd)}</div>
+            <div class="v-meta">SKU: ${esc(sku)} • MOQ: ${min}</div>
+            ${stockHtml}
+
+            <div class="variant-value-grid">
+              <div class="mini-metric">
+                <div class="mini-label">Wholesale</div>
+                <div class="mini-value">${money(v.wholesale_price_srd)}</div>
+              </div>
+              <div class="mini-metric">
+                <div class="mini-label">Retail</div>
+                <div class="mini-value">${money(getRetailSrd(v))}</div>
+              </div>
+              <div class="mini-metric">
+                <div class="mini-label">Earn</div>
+                <div class="mini-value ${profit > 0 ? "profit-positive" : "profit-muted"}">${money(profit)}</div>
+              </div>
+            </div>
+
             <div class="v-actions">
-              <input class="qty" id="qty_${safeId(sku)}" type="number" min="${min}" value="${min}">
-              <button class="gold-btn" onclick="addVariant('${escAttr(sku)}')">Add</button>
+              <input class="qty" id="qty_${safeId(sku)}" type="number" min="${min}" value="${min}" ${stockNumber(v) <= 0 ? "disabled" : ""}>
+              <button class="gold-btn" onclick="addVariant('${escAttr(sku)}')" ${stockNumber(v) <= 0 ? "disabled" : ""}>Add</button>
             </div>
           </div>
         </div>
@@ -2180,6 +3168,11 @@
     function addVariant(sku){
       const item = catalog.find(i => String(i.sku) === String(sku));
       if(!item) return;
+
+      if (stockNumber(item) <= 0) {
+        toast("This variant is out of stock");
+        return;
+      }
 
       const input = document.getElementById("qty_" + safeId(sku));
       const min = Number(item.min_qty || 1);
@@ -2208,7 +3201,9 @@
       const rows = cartRows();
       const qty = rows.reduce((s,r)=>s+Number(r.qty||0),0);
       const total = rows.reduce((s,r)=>s+(Number(r.item.wholesale_price_srd||0)*Number(r.qty||0)),0);
-      return { rows, qty, total };
+      const retailTotal = rows.reduce((s,r)=>s+(getRetailSrd(r.item)*Number(r.qty||0)),0);
+      const profitTotal = Math.max(0, retailTotal - total);
+      return { rows, qty, total, retailTotal, profitTotal };
     }
 
     function updateBottomCart(){
@@ -2238,7 +3233,7 @@
 
     function renderCart(){
       setMsg("cartMsg","","");
-      const { rows, qty, total } = cartTotals();
+      const { rows, qty, total, retailTotal, profitTotal } = cartTotals();
       document.getElementById("cartSub").textContent = qty + " item(s) selected";
       document.getElementById("reviewTotal").textContent = money(total);
 
@@ -2249,7 +3244,15 @@
         return;
       }
 
-      body.innerHTML = rows.map(r=>{
+      const summaryHtml = `
+        <div class="cart-summary-card">
+          <div class="cart-summary-line"><span>Wholesale order total</span><strong>${money(total)}</strong></div>
+          <div class="cart-summary-line"><span>Suggested retail value</span><strong>${money(retailTotal)}</strong></div>
+          <div class="cart-summary-line profit"><span>Potential gross profit</span><strong>${money(profitTotal)}</strong></div>
+        </div>
+      `;
+
+      body.innerHTML = stockAdjustmentSummaryHtml() + summaryHtml + rows.map(r=>{
         const i = r.item;
         const img = i.image_url
           ? `<img class="cart-thumb" src="${escAttr(i.image_url)}" loading="lazy">`
@@ -2257,11 +3260,12 @@
         const line = Number(i.wholesale_price_srd||0) * Number(r.qty||0);
 
         return `
-          <div class="cart-item">
+          <div class="cart-item ${r.stock_changed ? 'stock-changed' : ''}">
             ${img}
             <div>
               <div class="cart-title">${esc(i.product_name || "")}</div>
-              <div class="cart-meta">${esc(i.variant_name || "")}<br>SKU: ${esc(r.sku)}<br>${money(i.wholesale_price_srd)} each • ${money(line)}</div>
+              <div class="cart-meta">${esc(i.variant_name || "")}<br>SKU: ${esc(r.sku)}<br>Wholesale: ${money(i.wholesale_price_srd)} each • ${money(line)}<br>Retail: ${money(getRetailSrd(i))} each • Earn: ${money(profitForItem(i))} each</div>
+              ${cartRowAdjustmentNote(r)}
               <div class="cart-controls">
                 <button class="round" onclick="changeQty('${escAttr(r.sku)}',-1)">−</button>
                 <div class="qty-display">${r.qty}</div>
@@ -2277,7 +3281,12 @@
     function changeQty(sku, delta){
       if(!cart[sku]) return;
       cart[sku].qty = Number(cart[sku].qty || 0) + Number(delta || 0);
-      if(cart[sku].qty <= 0) delete cart[sku];
+      if(cart[sku]) {
+        delete cart[sku].stock_changed;
+        delete cart[sku].requested_qty;
+        delete cart[sku].available_qty;
+      }
+      if(cart[sku] && cart[sku].qty <= 0) delete cart[sku];
       saveCart();
       renderCart();
       updateBottomCart();
@@ -2289,6 +3298,72 @@
       renderCart();
       updateBottomCart();
     }
+
+
+    function applyStockAdjustedCart(adjustedCart){
+      lastStockAdjustments = Array.isArray(adjustedCart) ? adjustedCart : [];
+
+      lastStockAdjustments.forEach(adj => {
+        const sku = String(adj.sku || "");
+        if (!sku) return;
+
+        if (adj.removed || Number(adj.adjusted_qty || 0) <= 0) {
+          delete cart[sku];
+          return;
+        }
+
+        if (!cart[sku]) {
+          cart[sku] = { sku: sku, qty: 0 };
+        }
+
+        cart[sku].qty = Number(adj.adjusted_qty || 0);
+        cart[sku].stock_changed = !!adj.changed;
+        cart[sku].requested_qty = Number(adj.requested_qty || 0);
+        cart[sku].available_qty = adj.available_qty;
+      });
+
+      saveCart();
+      renderCart();
+      updateBottomCart();
+    }
+
+    function stockAdjustmentSummaryHtml(){
+      if (!lastStockAdjustments || !lastStockAdjustments.length) return "";
+
+      const changed = lastStockAdjustments.filter(x => x.changed || x.removed);
+
+      if (!changed.length) return "";
+
+      const lines = changed.slice(0, 6).map(x => {
+        if (x.removed) {
+          return `• ${esc(x.product_name || x.sku)} ${x.variant_name ? "- " + esc(x.variant_name) : ""}: removed, no stock available`;
+        }
+
+        return `• ${esc(x.product_name || x.sku)} ${x.variant_name ? "- " + esc(x.variant_name) : ""}: ${x.requested_qty} → ${x.adjusted_qty}`;
+      }).join("<br>");
+
+      const more = changed.length > 6 ? `<br>+ ${changed.length - 6} more change(s)` : "";
+
+      return `
+        <div class="stock-adjustment-card">
+          <strong>Stock changed while you were ordering.</strong><br>
+          I adjusted the cart to the current Ecwid stock. Please review and submit again.<br><br>
+          ${lines}${more}
+        </div>
+      `;
+    }
+
+    function cartRowAdjustmentNote(row){
+      if (!row.stock_changed) return "";
+
+      return `
+        <div class="stock-change-note">
+          Adjusted from ${row.requested_qty || "requested qty"} to ${row.qty}.
+          Available now: ${row.available_qty}
+        </div>
+      `;
+    }
+
 
     async function submitOrder(){
       setMsg("cartMsg","","");
@@ -2304,18 +3379,28 @@
       const cartItems = rows.map(r => ({ sku:r.sku, qty:Number(r.qty||0) }));
 
       try{
-        const res = await gas("submitWholesaleOrderToEcwid", token, cartItems);
+        const res = await gas("submitWholesaleOrderLogOnly", token, cartItems);
+
+        if(res.stock_changed){
+          localStorage.removeItem(CATALOG_CACHE_KEY);
+          applyStockAdjustedCart(res.adjusted_cart || []);
+          setMsg("cartMsg","error",res.message || "Some quantities changed. Please review the updated cart and submit again.");
+          toast("Cart updated with live stock");
+          return;
+        }
 
         if(!res.ok){
           setMsg("cartMsg","error",(res.errors || ["Could not submit order."]).join("\n"));
           return;
         }
 
+        localStorage.removeItem(CATALOG_CACHE_KEY);
         cart = {};
+        lastStockAdjustments = [];
         saveCart();
         renderCart();
         updateBottomCart();
-        setMsg("cartMsg","success","Order logged: " + res.order_number + "\nTotal: " + money(res.total_srd));
+        setMsg("cartMsg","success","Order created: " + (res.order_number || "") + "\nTotal: " + money(res.total_srd));
         toast("Order submitted");
       }catch(err){
         setMsg("cartMsg","error",err.message || String(err));
@@ -2350,6 +3435,11 @@
     }
 
     function flashVariantRowBySku(sku){
+      if (stockNumber(item) <= 0) {
+        toast("This variant is out of stock");
+        return;
+      }
+
       const input = document.getElementById("qty_" + safeId(sku));
       const row = input ? input.closest(".variant-row") : null;
       if(!row) return;
@@ -2358,8 +3448,185 @@
       row.classList.add("added-flash");
     }
 
+
+
+    let activeRequestType = "";
+
+    function openRequestModal(type){
+      activeRequestType = type;
+      setMsg("requestMsg","","");
+
+      const modal = document.getElementById("requestModal");
+      const title = document.getElementById("requestModalTitle");
+      const sub = document.getElementById("requestModalSub");
+      const submit = document.getElementById("requestSubmitBtn");
+
+      document.getElementById("registerFields").classList.toggle("hidden", type !== "register");
+      document.getElementById("resetFields").classList.toggle("hidden", type !== "reset");
+
+      if(type === "register"){
+        title.textContent = "Request Wholesale Access";
+        sub.textContent = "Send your basic business details through WhatsApp.";
+        submit.textContent = "Send access request";
+      }else{
+        title.textContent = "Reset Password";
+        sub.textContent = "Send your password reset request through WhatsApp.";
+        submit.textContent = "Reset Password";
+      }
+
+      modal.classList.remove("hidden");
+
+      setTimeout(()=>{
+        const first = type === "register"
+          ? document.getElementById("regBusinessName")
+          : document.getElementById("resetBusinessName");
+        if(first) first.focus();
+      },50);
+    }
+
+    function closeRequestModal(){
+      document.getElementById("requestModal").classList.add("hidden");
+      activeRequestType = "";
+    }
+
+    function modalBackdropClose(event){
+      if(event.target && event.target.id === "requestModal"){
+        closeRequestModal();
+      }
+    }
+
+    function getFieldValue(id){
+      const el = document.getElementById(id);
+      return el ? el.value.trim() : "";
+    }
+
+    function validateRequiredFields(fields){
+      const missing = fields.filter(f => !getFieldValue(f.id));
+      if(missing.length){
+        setMsg("requestMsg","error","Please complete: " + missing.map(f=>f.label).join(", "));
+        return false;
+      }
+      return true;
+    }
+
+    function buildWhatsAppUrl(message){
+      return "https://wa.me/5978990667?text=" + encodeURIComponent(message);
+    }
+
+    async function submitRequestModal(){
+      setMsg("requestMsg","","");
+
+      if(activeRequestType === "register"){
+        const required = [
+          {id:"regBusinessName",label:"Business name"},
+          {id:"regContactName",label:"Contact person"},
+          {id:"regPhone",label:"Phone"},
+          {id:"regEmail",label:"Email"},
+          {id:"regSource",label:"How you heard about us"}
+        ];
+
+        if(!validateRequiredFields(required)) return;
+
+        const payload = {
+          type:"registration",
+          business_name:getFieldValue("regBusinessName"),
+          contact_name:getFieldValue("regContactName"),
+          phone:getFieldValue("regPhone"),
+          email:getFieldValue("regEmail"),
+          location:getFieldValue("regLocation"),
+          source:getFieldValue("regSource"),
+          notes:getFieldValue("regNotes")
+        };
+
+        const message =
+          "*Wholesale Registration Request*\\n\\n" +
+          "Business: " + payload.business_name + "\\n" +
+          "Contact: " + payload.contact_name + "\\n" +
+          "Phone: " + payload.phone + "\\n" +
+          "Email: " + payload.email + "\\n" +
+          "Location: " + (payload.location || "-") + "\\n" +
+          "Heard about us: " + payload.source + "\\n" +
+          "Notes: " + (payload.notes || "-");
+
+        await logPortalRequest(payload);
+        window.open(buildWhatsAppUrl(message), "_blank");
+        setMsg("requestMsg","success","WhatsApp opened. Please send the message to complete your request.");
+        return;
+      }
+
+      if(activeRequestType === "reset"){
+        const required = [
+          {id:"resetBusinessName",label:"Business name"},
+          {id:"resetContactName",label:"Contact person"},
+          {id:"resetEmail",label:"Registered email"},
+          {id:"resetPhone",label:"Phone"}
+        ];
+
+        if(!validateRequiredFields(required)) return;
+
+        const payload = {
+          type:"password_reset",
+          business_name:getFieldValue("resetBusinessName"),
+          contact_name:getFieldValue("resetContactName"),
+          email:getFieldValue("resetEmail"),
+          phone:getFieldValue("resetPhone"),
+          notes:getFieldValue("resetNotes")
+        };
+
+        const message =
+          "*Wholesale Password Reset Request*\\n\\n" +
+          "Business: " + payload.business_name + "\\n" +
+          "Contact: " + payload.contact_name + "\\n" +
+          "Registered email: " + payload.email + "\\n" +
+          "Phone: " + payload.phone + "\\n" +
+          "Notes: " + (payload.notes || "-");
+
+        await logPortalRequest(payload);
+        window.open(buildWhatsAppUrl(message), "_blank");
+        setMsg("requestMsg","success","WhatsApp opened. Please send the message to complete your reset request.");
+      }
+    }
+
+    async function logPortalRequest(payload){
+      try{
+        await apiJsonp("logPortalRequest", { payload: JSON.stringify(payload || {}) });
+      }catch(err){
+        // Do not block WhatsApp handoff if logging fails.
+        console.warn("Portal request logging failed", err);
+      }
+    }
+
+    function initLoginKeyboardShortcuts(){
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+
+      [email, password].forEach(el => {
+        if(!el) return;
+        el.addEventListener("keydown", function(e){
+          if(e.key === "Enter"){
+            e.preventDefault();
+            login();
+          }
+        });
+      });
+    }
+
+    window.requestModalEscapeListener = true;
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape"){
+        const modal = document.getElementById("requestModal");
+        if(modal && !modal.classList.contains("hidden")) closeRequestModal();
+      }
+    });
+
     window.addEventListener("DOMContentLoaded", async ()=>{
+      initLoginKeyboardShortcuts();
       updateBottomCart();
+
+      try{
+        const cachedCustomer = JSON.parse(localStorage.getItem(CUSTOMER_CACHE_KEY) || "null");
+        if(cachedCustomer) customer = cachedCustomer;
+      }catch(e){}
 
       if(token){
         try{
