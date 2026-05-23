@@ -3,7 +3,7 @@
 <head>
   <base target="_top">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>KevinJuices Wholesale</title>
+  <title>BrightWater Distribution</title>
 
   <style>
     :root{
@@ -2159,6 +2159,10 @@
       text-align:center;
       font-size:12px;
       font-weight:650;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      width:100%;
     }
 
     .simple-feature-panel{
@@ -2311,6 +2315,1145 @@
       }
     }
 
+  
+    /* ==========================================================
+       LOGIN DESKTOP WIDTH FIX
+       Prevent older .login-wrap desktop rules from squeezing split layout.
+    ========================================================== */
+    .simple-login.login-wrap,
+    .login-wrap.simple-login{
+      max-width:none!important;
+      width:100%!important;
+      margin:0!important;
+    }
+
+    .simple-login .simple-login-shell{
+      max-width:1120px!important;
+      width:min(1120px, calc(100vw - 44px))!important;
+      margin:0 auto!important;
+      grid-template-columns:minmax(420px, 1fr) minmax(420px, 1.08fr)!important;
+    }
+
+    .simple-login .simple-feature-panel{
+      min-width:0!important;
+    }
+
+    .simple-login .simple-feature-card{
+      overflow:hidden;
+    }
+
+    @media (max-width:899px){
+      .simple-login .simple-login-shell{
+        width:100%!important;
+        max-width:none!important;
+        display:block!important;
+      }
+    }
+
+  
+    /* ==========================================================
+       CORPORATE BRAND PALETTE + TYPOGRAPHY
+       Extracted from provided brand guide:
+       Silver #C0C0C0 | Bright Blue #00A3E0 | Midnight Navy #0B0F16
+       Typography direction: Montserrat Bold / Montserrat Medium
+    ========================================================== */
+    :root{
+      --brand-silver:#C0C0C0;
+      --brand-blue:#00A3E0;
+      --brand-navy:#0B0F16;
+      --brand-bg:#F5F7FA;
+      --brand-text:#0B0F16;
+      --brand-muted:#667085;
+    }
+
+    html,body,button,input,select,textarea{
+      font-family:"Montserrat","Aptos","Segoe UI",Arial,sans-serif!important;
+    }
+
+    body{
+      color:var(--brand-text)!important;
+    }
+
+    .simple-login{
+      background:#e6e7e8!important;
+    }
+
+    .simple-login-shell{
+      background:#f8fafc!important;
+      box-shadow:0 34px 90px rgba(11,15,22,.22)!important;
+    }
+
+    .simple-login-panel{
+      background:#f8fafc!important;
+    }
+
+    .simple-brand{
+      color:var(--brand-navy)!important;
+      font-weight:900!important;
+      letter-spacing:-.045em!important;
+    }
+
+    .simple-brand::after{
+      content:"";
+      display:block;
+      width:42px;
+      height:4px;
+      border-radius:999px;
+      background:var(--brand-blue);
+      margin-top:8px;
+    }
+
+    .simple-login-title{
+      color:var(--brand-navy)!important;
+      font-weight:900!important;
+      letter-spacing:-.055em!important;
+    }
+
+    .simple-login-sub,
+    .simple-label,
+    .simple-note,
+    .login-text-link{
+      font-weight:600!important;
+    }
+
+    .simple-label{
+      color:#566170!important;
+    }
+
+    .simple-field input{
+      border-color:#d7dde5!important;
+      background:#ffffff!important;
+      color:var(--brand-navy)!important;
+    }
+
+    .simple-field input:focus{
+      border-color:var(--brand-blue)!important;
+      box-shadow:0 0 0 4px rgba(0,163,224,.13)!important;
+    }
+
+    .simple-login-btn{
+      background:var(--brand-navy)!important;
+      color:#ffffff!important;
+      font-weight:800!important;
+    }
+
+    .simple-login-btn:hover{
+      background:#111827!important;
+      box-shadow:0 10px 24px rgba(0,163,224,.16)!important;
+    }
+
+    .login-text-link:hover{
+      color:var(--brand-blue)!important;
+    }
+
+    .simple-feature-panel{
+      background:
+        radial-gradient(circle at 70% 12%, rgba(0,163,224,.25), transparent 28%),
+        linear-gradient(135deg,#0B0F16 0%,#101923 50%,#0B0F16 100%)!important;
+    }
+
+    .simple-feature-panel::before{
+      background:rgba(0,163,224,.18)!important;
+    }
+
+    .simple-support{
+      color:#e5f7ff!important;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    .simple-feature-card{
+      background:#f8fafc!important;
+      color:var(--brand-navy)!important;
+      border:1px solid rgba(192,192,192,.55);
+    }
+
+    .simple-card-kicker{
+      color:var(--brand-blue)!important;
+      font-weight:800!important;
+    }
+
+    .simple-feature-card h2{
+      color:var(--brand-navy)!important;
+      font-weight:900!important;
+    }
+
+    .simple-feature-card p{
+      color:#566170!important;
+      font-weight:600!important;
+    }
+
+    .simple-feature-bottom h3{
+      color:#ffffff!important;
+      font-weight:900!important;
+    }
+
+    .simple-feature-bottom p{
+      color:#cbd5e1!important;
+      font-weight:600!important;
+    }
+
+    .request-submit{
+      background:var(--brand-navy)!important;
+    }
+
+    .request-input:focus{
+      border-color:var(--brand-blue)!important;
+      box-shadow:0 0 0 4px rgba(0,163,224,.13)!important;
+    }
+
+    .request-head h2{
+      color:var(--brand-navy)!important;
+      font-weight:900!important;
+    }
+
+    .portal-pill,
+    .stock-badge.unlimited{
+      background:rgba(0,163,224,.10)!important;
+      color:#0078a8!important;
+    }
+
+    @media (max-width:899px){
+      .simple-login{
+        background:#f8fafc!important;
+      }
+
+      .simple-login-panel{
+        background:#f8fafc!important;
+      }
+    }
+
+  
+    /* ==========================================================
+       REQUEST / PASSWORD RESET MODAL HARD FIX
+       Forces these forms to behave as real pop-up overlays.
+    ========================================================== */
+    #requestModal{
+      position:fixed!important;
+      inset:0!important;
+      z-index:99999!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+      padding:20px!important;
+      background:rgba(11,15,22,.58)!important;
+      backdrop-filter:blur(10px)!important;
+      -webkit-backdrop-filter:blur(10px)!important;
+      margin:0!important;
+      width:100vw!important;
+      height:100vh!important;
+      overflow:auto!important;
+    }
+
+    #requestModal.hidden{
+      display:none!important;
+    }
+
+    #requestModal .request-card{
+      position:relative!important;
+      width:min(520px, calc(100vw - 32px))!important;
+      max-height:calc(100vh - 40px)!important;
+      overflow:auto!important;
+      background:#ffffff!important;
+      border-radius:24px!important;
+      padding:24px!important;
+      box-shadow:0 34px 90px rgba(11,15,22,.34)!important;
+      margin:auto!important;
+      transform:none!important;
+      border:1px solid rgba(192,192,192,.45)!important;
+    }
+
+    #requestModal .request-close{
+      position:absolute!important;
+      top:14px!important;
+      right:14px!important;
+      z-index:2!important;
+    }
+
+    #registerFields.hidden,
+    #resetFields.hidden{
+      display:none!important;
+    }
+
+    body.modal-open{
+      overflow:hidden!important;
+    }
+
+    @media (max-width:520px){
+      #requestModal{
+        padding:12px!important;
+        align-items:flex-start!important;
+      }
+
+      #requestModal .request-card{
+        width:100%!important;
+        max-height:calc(100vh - 24px)!important;
+        border-radius:22px!important;
+        padding:20px!important;
+        margin:12px auto!important;
+      }
+    }
+
+  
+    /* ==========================================================
+       POLISHED REQUEST MODALS
+       Match clean login screen styling.
+    ========================================================== */
+    #requestModal .request-card{
+      font-family:"Montserrat","Aptos","Segoe UI",Arial,sans-serif!important;
+      padding:30px!important;
+      border-radius:28px!important;
+      background:#f8fafc!important;
+      border:0!important;
+      box-shadow:0 34px 90px rgba(11,15,22,.34)!important;
+    }
+
+    #requestModal .request-head{
+      padding-right:42px!important;
+      margin-bottom:22px!important;
+    }
+
+    #requestModal .request-head h2{
+      margin:0 0 10px!important;
+      color:#0B0F16!important;
+      font-size:26px!important;
+      line-height:1.05!important;
+      letter-spacing:-.045em!important;
+      font-weight:900!important;
+    }
+
+    #requestModal .request-head p{
+      margin:0!important;
+      color:#667085!important;
+      font-size:13.5px!important;
+      line-height:1.5!important;
+      font-weight:600!important;
+    }
+
+    #requestModal .request-close{
+      width:36px!important;
+      height:36px!important;
+      border-radius:999px!important;
+      background:#eef2f7!important;
+      color:#0B0F16!important;
+      font-size:22px!important;
+      font-weight:700!important;
+      display:grid!important;
+      place-items:center!important;
+      line-height:1!important;
+      transition:background .15s ease, transform .1s ease!important;
+    }
+
+    #requestModal .request-close:hover{
+      background:#e2e8f0!important;
+      transform:scale(1.03)!important;
+    }
+
+    #requestModal .request-fields{
+      display:grid!important;
+      grid-template-columns:1fr!important;
+      column-gap:14px!important;
+      row-gap:10px!important;
+    }
+
+    #requestModal .request-fields .simple-label{
+      margin:0 0 7px!important;
+      color:#566170!important;
+      font-size:12px!important;
+      font-weight:800!important;
+      line-height:1.1!important;
+      display:block!important;
+    }
+
+    #requestModal .request-input{
+      width:100%!important;
+      min-height:48px!important;
+      border-radius:12px!important;
+      border:1px solid #d7dde5!important;
+      background:#ffffff!important;
+      color:#0B0F16!important;
+      padding:0 13px!important;
+      font-size:14px!important;
+      font-weight:500!important;
+      outline:none!important;
+      margin:0 0 2px!important;
+      box-shadow:none!important;
+      appearance:auto!important;
+      transition:border-color .15s ease, box-shadow .15s ease, background .15s ease!important;
+    }
+
+    #requestModal .request-input:focus{
+      background:#ffffff!important;
+      border-color:#00A3E0!important;
+      box-shadow:0 0 0 4px rgba(0,163,224,.13)!important;
+    }
+
+    #requestModal select.request-input{
+      cursor:pointer!important;
+      padding-right:34px!important;
+    }
+
+    #requestModal .request-textarea{
+      min-height:96px!important;
+      padding:12px 13px!important;
+      resize:vertical!important;
+      line-height:1.45!important;
+      font-family:"Montserrat","Aptos","Segoe UI",Arial,sans-serif!important;
+    }
+
+    #requestModal .request-submit{
+      width:100%!important;
+      min-height:52px!important;
+      margin-top:18px!important;
+      border-radius:15px!important;
+      background:#0B0F16!important;
+      color:#ffffff!important;
+      font-size:14px!important;
+      font-weight:850!important;
+      box-shadow:none!important;
+      transition:background .15s ease, transform .1s ease!important;
+    }
+
+    #requestModal .request-submit:hover{
+      background:#111827!important;
+    }
+
+    #requestModal .request-submit:active{
+      transform:scale(.99)!important;
+    }
+
+    #requestModal #requestMsg{
+      margin-bottom:16px!important;
+    }
+
+    @media (max-width:620px){
+      #requestModal .request-card{
+        padding:24px!important;
+      }
+
+      #requestModal .request-fields{
+        grid-template-columns:1fr!important;
+        gap:8px!important;
+      }
+
+      #requestModal .request-head h2{
+        font-size:23px!important;
+      }
+    }
+
+  
+    /* ==========================================================
+       MODAL FIELD DUPLICATION FIX
+    ========================================================== */
+    #requestModal #registerFields.hidden,
+    #requestModal #resetFields.hidden{
+      display:none!important;
+    }
+
+    #requestModal #registerFields:not(.hidden),
+    #requestModal #resetFields:not(.hidden){
+      display:grid!important;
+      grid-template-columns:1fr!important;
+      gap:8px!important;
+    }
+
+    #requestModal .request-fields > label,
+    #requestModal .request-fields > input,
+    #requestModal .request-fields > select,
+    #requestModal .request-fields > textarea{
+      grid-column:1 / -1!important;
+    }
+
+  
+    /* ==========================================================
+       OPTION 3 LOGIN ACTION PLACEMENT
+       Forgot password = login utility.
+       Request access = onboarding CTA on the info panel.
+    ========================================================== */
+    .forgot-row{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      margin:10px 0 18px;
+      width:100%;
+    }
+
+    .forgot-row .login-text-link{
+      color:#667085!important;
+      font-size:12px!important;
+      font-weight:700!important;
+      background:transparent!important;
+      border:0!important;
+      padding:0!important;
+      text-decoration:none!important;
+    }
+
+    .forgot-row .login-text-link:hover{
+      color:#00A3E0!important;
+      text-decoration:underline!important;
+      text-underline-offset:3px!important;
+    }
+
+    .login-links-row{
+      display:none!important;
+    }
+
+    .access-cta-card{
+      margin:26px auto 0;
+      width:min(430px,100%);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      text-align:left;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    .access-cta-card strong{
+      display:block;
+      color:#ffffff;
+      font-size:14px;
+      line-height:1.2;
+      font-weight:850;
+      margin-bottom:4px;
+    }
+
+    .access-cta-card span{
+      display:block;
+      color:#cbd5e1;
+      font-size:12px;
+      line-height:1.35;
+      font-weight:600;
+    }
+
+    .access-cta-card button{
+      flex:0 0 auto;
+      min-height:40px;
+      border-radius:12px;
+      padding:0 14px;
+      background:#ffffff;
+      color:#0B0F16;
+      font-size:12px;
+      font-weight:850;
+      box-shadow:none;
+      border:0;
+      white-space:nowrap;
+    }
+
+    .access-cta-card button:hover{
+      background:#e5f7ff;
+      color:#0078a8;
+    }
+
+    @media (max-width:899px){
+      .forgot-row{
+        justify-content:center;
+        margin:12px 0 18px;
+      }
+
+      .access-cta-card{
+        display:none;
+      }
+
+      .login-links-row{
+        display:none!important;
+      }
+
+      /* On mobile there is no right panel, so request access becomes a subtle card below note. */
+      .simple-note::after{
+        content:"";
+        display:block;
+      }
+
+      .mobile-access-row{
+        display:flex!important;
+      }
+    }
+
+  
+    /* ==========================================================
+       MODAL ACTION FEEDBACK / PERCEIVED SPEED
+    ========================================================== */
+    .request-submit.is-working{
+      position:relative;
+      pointer-events:none;
+      opacity:.9;
+    }
+
+    .request-submit.is-working::after{
+      content:"";
+      position:absolute;
+      right:18px;
+      top:50%;
+      width:16px;
+      height:16px;
+      margin-top:-8px;
+      border-radius:999px;
+      border:2px solid rgba(255,255,255,.45);
+      border-top-color:#ffffff;
+      animation:spin .8s linear infinite;
+    }
+
+    .request-submit.success-pulse{
+      animation:requestSuccessPulse .45s ease-out;
+    }
+
+    .request-inline-status{
+      display:none;
+      margin:0 0 14px;
+      border-radius:14px;
+      padding:11px 12px;
+      background:#ecfdf3;
+      color:#027a48;
+      border:1px solid #dcfae6;
+      font-size:13px;
+      font-weight:700;
+      line-height:1.35;
+    }
+
+    .request-inline-status.show{
+      display:block;
+    }
+
+    @keyframes requestSuccessPulse{
+      0%{transform:scale(1)}
+      45%{transform:scale(.985)}
+      100%{transform:scale(1)}
+    }
+
+  
+    /* ==========================================================
+       CORPORATE BRAND SYSTEM — CATALOG WIDE
+       Palette:
+       Silver #C0C0C0
+       Bright Blue #00A3E0
+       Midnight Navy #0B0F16
+       Typography: Montserrat Bold / Montserrat Medium direction
+    ========================================================== */
+    :root{
+      --brand-silver:#C0C0C0;
+      --brand-blue:#00A3E0;
+      --brand-navy:#0B0F16;
+      --brand-navy-2:#111827;
+      --brand-bg:#F5F7FA;
+      --brand-surface:#FFFFFF;
+      --brand-soft:#F8FAFC;
+      --brand-line:#D7DDE5;
+      --brand-muted:#667085;
+      --brand-success:#027A48;
+      --brand-warning:#B54708;
+      --brand-danger:#BE123C;
+
+      --bg:var(--brand-bg)!important;
+      --card:var(--brand-surface)!important;
+      --text:var(--brand-navy)!important;
+      --muted:var(--brand-muted)!important;
+      --line:var(--brand-line)!important;
+      --dark:var(--brand-navy)!important;
+      --accent:var(--brand-blue)!important;
+      --gold:var(--brand-blue)!important;
+      --gold2:#4CC3EC!important;
+      --shadow:0 8px 24px rgba(11,15,22,.075)!important;
+      --shadow2:0 18px 42px rgba(11,15,22,.13)!important;
+    }
+
+    html,
+    body,
+    button,
+    input,
+    select,
+    textarea{
+      font-family:"Montserrat","Aptos","Segoe UI",Arial,sans-serif!important;
+    }
+
+    body{
+      background:var(--brand-bg)!important;
+      color:var(--brand-navy)!important;
+    }
+
+    .app{
+      background:transparent!important;
+    }
+
+    /* Header / Catalog top */
+    .top{
+      background:var(--brand-surface)!important;
+      border:1px solid rgba(215,221,229,.8)!important;
+      box-shadow:0 10px 28px rgba(11,15,22,.06)!important;
+    }
+
+    .top-title,
+    .screen-title,
+    .category-title,
+    .cart-title,
+    .p-title,
+    .v-name{
+      color:var(--brand-navy)!important;
+      font-weight:900!important;
+      letter-spacing:-.035em!important;
+    }
+
+    .customer,
+    .stats,
+    .screen-sub,
+    .p-meta,
+    .small-note,
+    .v-meta,
+    .cart-meta,
+    .sync-row{
+      color:var(--brand-muted)!important;
+      font-weight:600!important;
+    }
+
+    /* Search / filters */
+    .search,
+    .modern-select,
+    .qty,
+    .request-input{
+      background:var(--brand-surface)!important;
+      border:1px solid var(--brand-line)!important;
+      color:var(--brand-navy)!important;
+      box-shadow:none!important;
+      font-weight:600!important;
+    }
+
+    .search:focus,
+    .modern-select:focus,
+    .qty:focus,
+    .request-input:focus{
+      border-color:var(--brand-blue)!important;
+      box-shadow:0 0 0 4px rgba(0,163,224,.13)!important;
+      outline:none!important;
+    }
+
+    .chip{
+      background:var(--brand-surface)!important;
+      color:#344054!important;
+      border:1px solid var(--brand-line)!important;
+      box-shadow:none!important;
+      font-weight:800!important;
+    }
+
+    .chip.active{
+      background:var(--brand-navy)!important;
+      color:#ffffff!important;
+      border-color:var(--brand-navy)!important;
+      box-shadow:0 0 0 3px rgba(0,163,224,.16)!important;
+    }
+
+    .refresh-link{
+      color:var(--brand-muted)!important;
+      font-weight:800!important;
+    }
+
+    .refresh-link:hover{
+      color:var(--brand-blue)!important;
+    }
+
+    /* Product/catalog cards */
+    .product-row,
+    .hero-product,
+    .variant-row,
+    .cart-item,
+    .cart-summary-card{
+      background:var(--brand-surface)!important;
+      border:1px solid rgba(215,221,229,.62)!important;
+      box-shadow:0 8px 22px rgba(11,15,22,.055)!important;
+    }
+
+    @media (hover:hover){
+      .product-row:hover,
+      .variant-row:hover{
+        border-color:rgba(0,163,224,.42)!important;
+        box-shadow:0 16px 36px rgba(11,15,22,.11)!important;
+      }
+    }
+
+    .p-img,
+    .v-img,
+    .cart-thumb,
+    .hero-product img{
+      background:#ffffff!important;
+      border-color:rgba(215,221,229,.72)!important;
+    }
+
+    .price,
+    .mini-value{
+      color:var(--brand-navy)!important;
+      font-weight:850!important;
+    }
+
+    .mini-metric{
+      background:#F4F7FA!important;
+      border:1px solid rgba(215,221,229,.45)!important;
+    }
+
+    .mini-label{
+      color:#667085!important;
+      font-weight:800!important;
+    }
+
+    .profit-positive{
+      color:var(--brand-success)!important;
+    }
+
+    /* Primary / action buttons */
+    .primary,
+    .select-btn,
+    .gold-btn,
+    .request-submit{
+      background:var(--brand-navy)!important;
+      color:#ffffff!important;
+      border:0!important;
+      box-shadow:none!important;
+      font-weight:850!important;
+    }
+
+    .primary:hover,
+    .select-btn:hover,
+    .gold-btn:hover,
+    .request-submit:hover{
+      background:#111827!important;
+      box-shadow:0 10px 24px rgba(0,163,224,.14)!important;
+    }
+
+    .ghost-btn{
+      background:#ffffff!important;
+      color:var(--brand-navy)!important;
+      border:1px solid var(--brand-line)!important;
+      box-shadow:none!important;
+      font-weight:800!important;
+    }
+
+    .ghost-btn:hover{
+      border-color:var(--brand-blue)!important;
+      color:var(--brand-blue)!important;
+      background:#F8FCFF!important;
+    }
+
+    .back,
+    .round{
+      background:#EEF2F7!important;
+      color:var(--brand-navy)!important;
+    }
+
+    .danger-btn{
+      background:#FFF1F2!important;
+      color:var(--brand-danger)!important;
+      font-weight:850!important;
+    }
+
+    /* Category sections */
+    .category-title{
+      border-bottom:1px solid rgba(215,221,229,.75);
+      padding-bottom:8px;
+    }
+
+    .category-count{
+      color:var(--brand-muted)!important;
+      font-weight:800!important;
+    }
+
+    /* Stock badges */
+    .stock-badge.in{
+      background:#ECFDF3!important;
+      color:var(--brand-success)!important;
+    }
+
+    .stock-badge.low{
+      background:#FFFAEB!important;
+      color:var(--brand-warning)!important;
+    }
+
+    .stock-badge.out{
+      background:#FFF1F2!important;
+      color:var(--brand-danger)!important;
+    }
+
+    .stock-badge.unlimited{
+      background:rgba(0,163,224,.10)!important;
+      color:#0078A8!important;
+    }
+
+    /* Screens / cart */
+    .screen{
+      background:rgba(11,15,22,.42)!important;
+      backdrop-filter:blur(10px)!important;
+      -webkit-backdrop-filter:blur(10px)!important;
+    }
+
+    .screen-head,
+    .screen-body,
+    .cart-total-bar,
+    .bottom-cart{
+      background:var(--brand-surface)!important;
+      border-color:var(--brand-line)!important;
+    }
+
+    .screen-body{
+      background:var(--brand-bg)!important;
+    }
+
+    .cart-summary-line strong,
+    .total-line,
+    #reviewTotal,
+    #bottomTotal{
+      color:var(--brand-navy)!important;
+      font-weight:900!important;
+    }
+
+    .cart-summary-line.profit strong{
+      color:var(--brand-success)!important;
+    }
+
+    /* Cart stock adjustment */
+    .stock-adjustment-card,
+    .cart-item.stock-changed,
+    .stock-change-note{
+      background:#FFFAEB!important;
+      color:#92400E!important;
+      border-color:#FEDF89!important;
+    }
+
+    /* Toast / messages */
+    .toast{
+      background:var(--brand-navy)!important;
+      color:#ffffff!important;
+      box-shadow:0 18px 45px rgba(11,15,22,.24)!important;
+    }
+
+    .msg.error{
+      background:#FFF1F2!important;
+      color:#9F1239!important;
+      border:1px solid #FFE4E6!important;
+    }
+
+    .msg.success,
+    .request-inline-status{
+      background:#ECFDF3!important;
+      color:var(--brand-success)!important;
+      border:1px solid #DCFAE6!important;
+    }
+
+    /* Modal */
+    #requestModal{
+      background:rgba(11,15,22,.58)!important;
+    }
+
+    #requestModal .request-card{
+      background:#F8FAFC!important;
+      color:var(--brand-navy)!important;
+    }
+
+    #requestModal .request-head h2{
+      color:var(--brand-navy)!important;
+      font-weight:900!important;
+    }
+
+    #requestModal .request-close{
+      background:#EEF2F7!important;
+      color:var(--brand-navy)!important;
+    }
+
+    #requestModal .request-close:hover{
+      background:#E2E8F0!important;
+    }
+
+    /* Login right panel already uses brand, reinforce consistency */
+    .simple-feature-panel{
+      background:
+        radial-gradient(circle at 70% 12%, rgba(0,163,224,.25), transparent 28%),
+        linear-gradient(135deg,#0B0F16 0%,#101923 50%,#0B0F16 100%)!important;
+    }
+
+    .simple-brand::after{
+      background:var(--brand-blue)!important;
+    }
+
+    .access-cta-card button:hover{
+      background:#E5F7FF!important;
+      color:#0078A8!important;
+    }
+
+    @media (max-width:899px){
+      .screen{
+        background:var(--brand-bg)!important;
+      }
+
+      .top{
+        border-left:0!important;
+        border-right:0!important;
+        border-top:0!important;
+      }
+    }
+
+  
+    .brand-logo-img{
+        max-width:210px;
+        max-height:64px;
+      }
+
+      .brand-logo-wrap::after{
+        margin-top:74px;
+        margin-left:-210px;
+      }
+
+      .catalog-brand-line{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:5px;
+      }
+
+      .catalog-logo-img{
+        height:32px;
+        max-width:170px;
+      }
+
+      .catalog-brand-line .top-title{
+        font-size:18px!important;
+      }
+    }
+
+  
+    /* ==========================================================
+       PREMIUM TEXT BRANDING
+    ========================================================== */
+    .premium-wordmark{
+      color:#0B0F16!important;
+      font-size:42px!important;
+      line-height:1!important;
+      font-weight:950!important;
+      letter-spacing:-.06em!important;
+      margin-bottom:54px!important;
+      position:relative;
+      display:inline-block;
+    }
+
+    .premium-wordmark::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-18px;
+      width:44px;
+      height:4px;
+      border-radius:999px;
+      background:#00A3E0;
+    }
+
+    .text-brand-line{
+      display:flex;
+      align-items:center;
+    }
+
+    .text-brand-line .top-title{
+      color:#0B0F16!important;
+      font-weight:950!important;
+      letter-spacing:-.045em!important;
+    }
+
+    @media (max-width:899px){
+      .premium-wordmark{
+        font-size:34px!important;
+        margin-bottom:48px!important;
+      }
+
+      .premium-wordmark::after{
+        bottom:-16px;
+      }
+    }
+
+  
+    /* ==========================================================
+       BRIGHTWATER TEXT BRANDING FIXES
+    ========================================================== */
+    .premium-wordmark{
+      display:flex!important;
+      flex-direction:column!important;
+      align-items:flex-start!important;
+      gap:14px!important;
+      color:#0B0F16!important;
+      margin-bottom:54px!important;
+      line-height:1!important;
+    }
+
+    .premium-wordmark span{
+      display:block!important;
+      color:#0B0F16!important;
+      font-size:42px!important;
+      line-height:1!important;
+      font-weight:950!important;
+      letter-spacing:-.06em!important;
+    }
+
+    .premium-wordmark .brand-underline{
+      display:block!important;
+      width:46px!important;
+      height:4px!important;
+      border-radius:999px!important;
+      background:#00A3E0!important;
+      flex:0 0 auto!important;
+    }
+
+    .premium-wordmark::after{
+      display:none!important;
+      content:none!important;
+    }
+
+    .catalog-company-name{
+      color:#0B0F16!important;
+      font-size:19px!important;
+      line-height:1.05!important;
+      font-weight:950!important;
+      letter-spacing:-.045em!important;
+      margin-bottom:4px!important;
+      position:relative!important;
+      width:max-content!important;
+      max-width:100%!important;
+    }
+
+    .catalog-company-name::after{
+      content:""!important;
+      display:block!important;
+      width:34px!important;
+      height:3px!important;
+      border-radius:999px!important;
+      background:#00A3E0!important;
+      margin-top:6px!important;
+    }
+
+    .text-brand-line .top-title,
+    .top-title{
+      color:#0B0F16!important;
+      font-weight:900!important;
+      letter-spacing:-.04em!important;
+    }
+
+    @media (max-width:899px){
+      .premium-wordmark{
+        gap:12px!important;
+        margin-bottom:48px!important;
+      }
+
+      .premium-wordmark span{
+        font-size:34px!important;
+      }
+
+      .catalog-company-name{
+        font-size:16px!important;
+      }
+
+      .catalog-company-name::after{
+        width:30px!important;
+        height:3px!important;
+        margin-top:5px!important;
+      }
+    }
+
   </style>
 </head>
 
@@ -2320,7 +3463,10 @@
     <section id="loginScreen" class="login-wrap simple-login">
       <div class="simple-login-shell">
         <div class="simple-login-panel">
-          <div class="simple-brand">KevinJuices</div>
+          <div class="simple-brand premium-wordmark">
+              <span>BrightWater Distribution</span>
+              <i class="brand-underline" aria-hidden="true"></i>
+            </div>
 
           <div class="simple-form-wrap">
             <h1 class="simple-login-title">Sign in</h1>
@@ -2338,29 +3484,40 @@
               <input id="password" type="password" placeholder="••••••••" autocomplete="current-password">
             </div>
 
-            <div class="login-links-row">
-              <button type="button" class="login-text-link left-link" onclick="openRequestModal('reset')">Forgot password?</button>
-              <button type="button" class="login-text-link right-link" onclick="openRequestModal('register')">Request access</button>
-            </div>
-
             <button class="primary simple-login-btn" id="loginBtn" onclick="login()">Sign in</button>
 
+            <div class="forgot-row">
+              <button type="button" class="login-text-link" onclick="openRequestModal('reset')">Forgot password?</button>
+            </div>
+
             <p class="simple-note">Authorized wholesale customers only.</p>
+
+            <div class="mobile-access-row" style="display:none;justify-content:center;margin-top:18px;">
+              <button type="button" class="login-text-link" onclick="openRequestModal('register')">Request wholesale access</button>
+            </div>
           </div>
         </div>
 
         <div class="simple-feature-panel">
-          <div class="simple-support">Wholesale Portal</div>
+          <div class="simple-support">B2B Portal</div>
 
           <div class="simple-feature-card">
-            <div class="simple-card-kicker">Private catalog</div>
-            <h2>Order faster with live stock checks.</h2>
-            <p>View dealer pricing, available variants, retail value, and submit orders directly into the normal Ecwid workflow.</p>
+            <div class="simple-card-kicker">Private wholesale catalog</div>
+            <h2>Built for retail partners.</h2>
+            <p>Access dealer pricing, live availability, curated product selections, and streamlined ordering through one centralized platform.</p>
           </div>
 
           <div class="simple-feature-bottom">
-            <h3>Built for retail partners</h3>
-            <p>Clean ordering, stock validation, and wholesale pricing in one simple portal.</p>
+            <h3>Wholesale access by approval</h3>
+            <p>New retail partners can request access. Existing partners can sign in to view pricing, availability, and place orders.</p>
+
+            <div class="access-cta-card">
+              <div>
+                <strong>Need an account?</strong>
+                <span>Request access and our team will review your details.</span>
+              </div>
+              <button type="button" onclick="openRequestModal('register')">Request access</button>
+            </div>
           </div>
         </div>
       </div>
@@ -2370,7 +3527,12 @@
       <header class="top">
         <div class="top-row">
           <div>
-            <div class="top-title">Wholesale Catalog</div>
+            <div class="catalog-brand-line text-brand-line">
+              <div>
+                <div class="catalog-company-name">BrightWater Distribution</div>
+                <div class="top-title">Wholesale Catalog</div>
+              </div>
+            </div>
             <div class="customer" id="customerInfo"></div>
           </div>
           <button class="ghost-btn" style="min-height:40px" onclick="logout()">Logout</button>
@@ -2458,23 +3620,19 @@
 
       <div id="requestMsg" class="msg"></div>
 
-      <div id="registerFields" class="request-fields hidden">
-        <label class="simple-label">Business name</label>
-        <input id="regBusinessName" class="request-input" type="text" placeholder="Your business name">
+      <div id="requestInlineStatus" class="request-inline-status"></div>
 
-        <label class="simple-label">Contact person</label>
+      <div id="registerFields" class="request-fields hidden">
+        <label class="simple-label" for="regContactName">Contact person</label>
         <input id="regContactName" class="request-input" type="text" placeholder="Full name">
 
-        <label class="simple-label">Phone / WhatsApp</label>
+        <label class="simple-label" for="regPhone">Phone / WhatsApp</label>
         <input id="regPhone" class="request-input" type="tel" placeholder="+597...">
 
-        <label class="simple-label">Email</label>
+        <label class="simple-label" for="regEmail">E-mail</label>
         <input id="regEmail" class="request-input" type="email" placeholder="email@example.com">
 
-        <label class="simple-label">Business location</label>
-        <input id="regLocation" class="request-input" type="text" placeholder="City / area">
-
-        <label class="simple-label">How did you hear about us?</label>
+        <label class="simple-label" for="regSource">How did you hear about us?</label>
         <select id="regSource" class="request-input">
           <option value="">Select one</option>
           <option>Existing customer</option>
@@ -2486,31 +3644,21 @@
           <option>Other</option>
         </select>
 
-        <label class="simple-label">Additional notes</label>
+        <label class="simple-label" for="regNotes">Notes / Comments</label>
         <textarea id="regNotes" class="request-input request-textarea" placeholder="Optional"></textarea>
       </div>
 
       <div id="resetFields" class="request-fields hidden">
-        <label class="simple-label">Business name</label>
-        <input id="resetBusinessName" class="request-input" type="text" placeholder="Your business name">
-
-        <label class="simple-label">Contact person</label>
-        <input id="resetContactName" class="request-input" type="text" placeholder="Full name">
-
-        <label class="simple-label">Registered email</label>
+        <label class="simple-label" for="resetEmail">E-mail</label>
         <input id="resetEmail" class="request-input" type="email" placeholder="email@example.com">
 
-        <label class="simple-label">Phone / WhatsApp</label>
+        <label class="simple-label" for="resetPhone">Phone / WhatsApp</label>
         <input id="resetPhone" class="request-input" type="tel" placeholder="+597...">
-
-        <label class="simple-label">Notes</label>
-        <textarea id="resetNotes" class="request-input request-textarea" placeholder="Optional"></textarea>
       </div>
 
       <button id="requestSubmitBtn" class="primary request-submit" onclick="submitRequestModal()">Send request</button>
     </div>
   </section>
-
 
   <div id="toast" class="toast"></div>
 
@@ -3455,6 +4603,8 @@
     function openRequestModal(type){
       activeRequestType = type;
       setMsg("requestMsg","","");
+      clearRequestInlineStatus && clearRequestInlineStatus();
+      clearRequestButtonBusy && clearRequestButtonBusy(false);
 
       const modal = document.getElementById("requestModal");
       const title = document.getElementById("requestModalTitle");
@@ -3467,14 +4617,15 @@
       if(type === "register"){
         title.textContent = "Request Wholesale Access";
         sub.textContent = "Send your basic business details through WhatsApp.";
-        submit.textContent = "Send access request";
+        submit.textContent = "Send via WhatsApp";
       }else{
         title.textContent = "Reset Password";
         sub.textContent = "Send your password reset request through WhatsApp.";
-        submit.textContent = "Reset Password";
+        submit.textContent = "Send via WhatsApp";
       }
 
       modal.classList.remove("hidden");
+      document.body.classList.add("modal-open");
 
       setTimeout(()=>{
         const first = type === "register"
@@ -3486,6 +4637,7 @@
 
     function closeRequestModal(){
       document.getElementById("requestModal").classList.add("hidden");
+      document.body.classList.remove("modal-open");
       activeRequestType = "";
     }
 
@@ -3513,15 +4665,62 @@
       return "https://wa.me/5978990667?text=" + encodeURIComponent(message);
     }
 
+    function setRequestButtonBusy(label){
+      const btn = document.getElementById("requestSubmitBtn");
+      if(!btn) return;
+
+      btn.dataset.originalText = btn.dataset.originalText || btn.textContent;
+      btn.textContent = label || "Opening WhatsApp...";
+      btn.classList.add("is-working");
+      btn.disabled = true;
+    }
+
+    function clearRequestButtonBusy(success){
+      const btn = document.getElementById("requestSubmitBtn");
+      if(!btn) return;
+
+      btn.textContent = btn.dataset.originalText || btn.textContent;
+      btn.classList.remove("is-working");
+      btn.disabled = false;
+
+      if(success){
+        btn.classList.remove("success-pulse");
+        void btn.offsetWidth;
+        btn.classList.add("success-pulse");
+      }
+    }
+
+    function setRequestInlineStatus(text){
+      const el = document.getElementById("requestInlineStatus");
+      if(!el) return;
+
+      el.textContent = text || "";
+      el.classList.toggle("show", !!text);
+    }
+
+    function clearRequestInlineStatus(){
+      setRequestInlineStatus("");
+    }
+
+    function openWhatsAppInstant(message){
+      const url = buildWhatsAppUrl(message);
+      const win = window.open(url, "_blank");
+
+      if(!win){
+        // Popup blockers sometimes block new tabs. This fallback still gives a clear action.
+        window.location.href = url;
+      }
+    }
+
     async function submitRequestModal(){
       setMsg("requestMsg","","");
+      clearRequestInlineStatus();
 
       if(activeRequestType === "register"){
         const required = [
-          {id:"regBusinessName",label:"Business name"},
           {id:"regContactName",label:"Contact person"},
-          {id:"regPhone",label:"Phone"},
-          {id:"regEmail",label:"Email"},
+          {id:"regPhone",label:"Phone / WhatsApp"},
+          {id:"regEmail",label:"E-mail"},
           {id:"regSource",label:"How you heard about us"}
         ];
 
@@ -3529,61 +4728,70 @@
 
         const payload = {
           type:"registration",
-          business_name:getFieldValue("regBusinessName"),
           contact_name:getFieldValue("regContactName"),
           phone:getFieldValue("regPhone"),
           email:getFieldValue("regEmail"),
-          location:getFieldValue("regLocation"),
           source:getFieldValue("regSource"),
           notes:getFieldValue("regNotes")
         };
 
         const message =
-          "*Wholesale Registration Request*\\n\\n" +
-          "Business: " + payload.business_name + "\\n" +
-          "Contact: " + payload.contact_name + "\\n" +
-          "Phone: " + payload.phone + "\\n" +
-          "Email: " + payload.email + "\\n" +
-          "Location: " + (payload.location || "-") + "\\n" +
-          "Heard about us: " + payload.source + "\\n" +
-          "Notes: " + (payload.notes || "-");
+          "Hi BrightWater Distribution,%0A%0A" +
+          "I would like to request wholesale access.%0A%0A" +
+          "Contact person: " + payload.contact_name + "%0A" +
+          "Phone / WhatsApp: " + payload.phone + "%0A" +
+          "E-mail: " + payload.email + "%0A" +
+          "How I heard about you: " + payload.source + "%0A" +
+          "Notes / Comments: " + (payload.notes || "-") + "%0A%0A" +
+          "Thank you.";
 
-        await logPortalRequest(payload);
-        window.open(buildWhatsAppUrl(message), "_blank");
-        setMsg("requestMsg","success","WhatsApp opened. Please send the message to complete your request.");
+        setRequestButtonBusy("Opening WhatsApp...");
+        setRequestInlineStatus("Opening WhatsApp. Please send the prepared message to complete your request.");
+
+        // Open WhatsApp immediately for near-instant perceived speed.
+        openWhatsAppInstant(decodeURIComponent(message));
+
+        // Log silently in the background. Do not delay the user.
+        logPortalRequest(payload)
+          .then(()=>console.log("Access request logged"))
+          .catch(err=>console.warn("Access request logging failed", err))
+          .finally(()=>clearRequestButtonBusy(true));
+
         return;
       }
 
       if(activeRequestType === "reset"){
         const required = [
-          {id:"resetBusinessName",label:"Business name"},
-          {id:"resetContactName",label:"Contact person"},
-          {id:"resetEmail",label:"Registered email"},
-          {id:"resetPhone",label:"Phone"}
+          {id:"resetEmail",label:"E-mail"},
+          {id:"resetPhone",label:"Phone / WhatsApp"}
         ];
 
         if(!validateRequiredFields(required)) return;
 
         const payload = {
           type:"password_reset",
-          business_name:getFieldValue("resetBusinessName"),
-          contact_name:getFieldValue("resetContactName"),
           email:getFieldValue("resetEmail"),
-          phone:getFieldValue("resetPhone"),
-          notes:getFieldValue("resetNotes")
+          phone:getFieldValue("resetPhone")
         };
 
         const message =
-          "*Wholesale Password Reset Request*\\n\\n" +
-          "Business: " + payload.business_name + "\\n" +
-          "Contact: " + payload.contact_name + "\\n" +
-          "Registered email: " + payload.email + "\\n" +
-          "Phone: " + payload.phone + "\\n" +
-          "Notes: " + (payload.notes || "-");
+          "Hi BrightWater Distribution,%0A%0A" +
+          "I would like to request a password reset for the wholesale portal.%0A%0A" +
+          "E-mail: " + payload.email + "%0A" +
+          "Phone / WhatsApp: " + payload.phone + "%0A%0A" +
+          "Thank you.";
 
-        await logPortalRequest(payload);
-        window.open(buildWhatsAppUrl(message), "_blank");
-        setMsg("requestMsg","success","WhatsApp opened. Please send the message to complete your reset request.");
+        setRequestButtonBusy("Opening WhatsApp...");
+        setRequestInlineStatus("Opening WhatsApp. Please send the prepared message to complete your reset request.");
+
+        // Open WhatsApp immediately for near-instant perceived speed.
+        openWhatsAppInstant(decodeURIComponent(message));
+
+        // Log silently in the background. Do not delay the user.
+        logPortalRequest(payload)
+          .then(()=>console.log("Password reset request logged"))
+          .catch(err=>console.warn("Password reset logging failed", err))
+          .finally(()=>clearRequestButtonBusy(true));
       }
     }
 
